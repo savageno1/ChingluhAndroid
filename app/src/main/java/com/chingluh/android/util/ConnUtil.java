@@ -19,7 +19,7 @@ public class ConnUtil {
 	private static String STR_BASE_URL_192 = "http://192.168.0.253:8080/chingluh-web-server/";
 
 	/**
-	 * 取连接
+	 * 取连接 A
 	 * @param componentName
 	 * @return
 	 * @throws Exception
