@@ -13,7 +13,7 @@ public class PubCompanyViewHolder implements BaseViewHolder{
 
 	public PubCompanyViewHolder(View viewRoot){
 		this.textViewCompanyId=(TextView)viewRoot.findViewById(R.id.textViewCompanyId);
-		this.textViewCompanySplit=(TextView)viewRoot.findViewById(R.id.textViewCompanySplit);
+		//		this.textViewCompanySplit = (TextView) viewRoot.findViewById(R.id.textViewCompanySplit);
 		this.textViewCompanyName=(TextView)viewRoot.findViewById(R.id.textViewCompanyName);
 	}
 

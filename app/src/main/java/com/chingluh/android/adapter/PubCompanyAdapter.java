@@ -25,11 +25,11 @@ public class PubCompanyAdapter extends BaseSpinnerAdapter{
 		if(convertView==null){
 			convertView=layoutInflater.inflate(R.layout.spinner_item_company,parent,false);
 			TextView textViewCompanyId=(TextView)convertView.findViewById(R.id.textViewCompanyId);
-			TextView textViewCompanySplit=(TextView)convertView.findViewById(R.id.textViewCompanySplit);
+//			TextView textViewCompanySplit=(TextView)convertView.findViewById(R.id.textViewCompanySplit);
 			TextView textViewCompanyName=(TextView)convertView.findViewById(R.id.textViewCompanyName);
 			PubCompany pubCompany=(PubCompany)this.getItem(position);
 			textViewCompanyId.setText(pubCompany.getCompanyId());
-			textViewCompanySplit.setText(":");
+//			textViewCompanySplit.setText(":");
 			textViewCompanyName.setText(pubCompany.getCompanyName());
 		}
 		if((convertView!=null)&&(convertView.getTag() instanceof PubCompanyViewHolder)){
@@ -43,12 +43,12 @@ public class PubCompanyAdapter extends BaseSpinnerAdapter{
 			PubCompanyViewHolder pubCompanyViewHolder=(PubCompanyViewHolder)baseViewHolder;
 			PubCompany pubCompany=(PubCompany)baseModel;
 			TextView textViewCompanyId=pubCompanyViewHolder.getTextViewCompanyId();
-			TextView textViewCompanySplit=pubCompanyViewHolder.getTextViewCompanySplit();
+//			TextView textViewCompanySplit=pubCompanyViewHolder.getTextViewCompanySplit();
 			TextView textViewCompanyName=pubCompanyViewHolder.getTextViewCompanyName();
-			textViewCompanyId.setVisibility(View.VISIBLE);
+			textViewCompanyId.setVisibility(View.INVISIBLE);
 			textViewCompanyId.setText(pubCompany.getCompanyId());
-			textViewCompanySplit.setVisibility(View.VISIBLE);
-			textViewCompanySplit.setText(":");
+//			textViewCompanySplit.setVisibility(View.VISIBLE);
+//			textViewCompanySplit.setText(":");
 			textViewCompanyName.setVisibility(View.VISIBLE);
 			textViewCompanyName.setText(pubCompany.getCompanyName());
 		}

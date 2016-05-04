@@ -21,15 +21,8 @@
 		<item name="android:buttonStyle">@style/Chingluh_Style_Button</item>
 		<item name="android:textViewStyle">@style/Chingluh_Style_TextView</item>
 		<item name="android:editTextStyle">@style/Chingluh_Style_EditText</item>
-		<!--<item name="android:spinnerStyle">@style/Chingluh_Style_Spinner</item>-->
-		<item name="android:spinnerItemStyle">@style/Chingluh_ItemStyle_Spinner</item>
-		<item name="android:spinnerDropDownItemStyle">@style/Chingluh_DropDownItemStyle_Spinner</item>
-	</style>
-
-	<style name="Chingluh_Style_Button">
-		<item name="android:background">@drawable/button_background</item>
-		<item name="android:textColor">@drawable/button_textcolor</item>
-		<item name="android:gravity">center</item>
+		<item name="android:spinnerStyle">@style/Chingluh_Style_Spinner</item>
+		<item name="android:dropDownSpinnerStyle">@style/Chingluh_ItemStyle_Spinner</item>
 	</style>
 
 	<style name="Chingluh_Style_Spinner">
@@ -42,9 +35,10 @@
 		<item name="android:background">@drawable/spinner_background</item>
 	</style>
 
-	<style name="Chingluh_DropDownItemStyle_Spinner">
-		<item name="android:textColor">@color/Chingluh_Gray</item>
-		<item name="android:background">@drawable/spinner_background</item>
+	<style name="Chingluh_Style_Button">
+		<item name="android:background">@drawable/button_background</item>
+		<item name="android:textColor">@drawable/button_textcolor</item>
+		<item name="android:gravity">center</item>
 	</style>
 
 	<style name="Chingluh_Style_TextView">
