@@ -10,14 +10,15 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 public abstract class BaseSpinnerAdapter extends BaseAdapter implements OnScrollListener{
-	private LayoutInflater layoutInflater;
-	private int scrollState=OnScrollListener.SCROLL_STATE_IDLE;
-	private List<Runnable> alRunnable=new ArrayList<Runnable>();
-	private List<BaseModel> alModel;
+	protected LayoutInflater layoutInflater;
+	protected int scrollState=OnScrollListener.SCROLL_STATE_IDLE;
+	protected List<BaseModel> alModel;
+	protected List<Runnable> alRunnable=new ArrayList<Runnable>();
 	private ListView listView;
 
 	public BaseSpinnerAdapter(Context context,ListView listView,List<BaseModel> alModel){
@@ -25,10 +26,8 @@ public abstract class BaseSpinnerAdapter extends BaseAdapter implements OnScroll
 		this.alModel=alModel;
 		this.listView=listView;
 		this.listView.setOnScrollListener(this);
-	}
-
-	public LayoutInflater getLayoutInflater(){
-		return layoutInflater;
+		//model列表排序
+		Collections.sort(alModel);
 	}
 
 	@Override
@@ -48,9 +47,6 @@ public abstract class BaseSpinnerAdapter extends BaseAdapter implements OnScroll
 
 	@Override
 	public abstract View getView(int position,View convertView,ViewGroup parent);
-
-	public abstract void updateView(BaseViewHolder viewHolder,BaseModel baseModel);
-
 
 	@Override
 	public void onScrollStateChanged(AbsListView view,int scrollState){

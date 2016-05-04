@@ -16,7 +16,6 @@ import com.chingluh.android.util.MapForSerializable;
 import com.chingluh.android.util.MessageUtil;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -49,8 +48,7 @@ public class InitHandler extends Handler{
 				alPubCompany.add(mapCompany.get(iterator.next()));
 			}
 			//提供公司别数组给配适器
-			Collections.sort(alPubCompany);
-			this.companyAdapter=new PubCompanyAdapter(this.activity,this.listView,alPubCompany);
+			this.companyAdapter=new PubCompanyAdapter(this.activity,this.listView,alPubCompany,R.layout.spinner_item_company);
 			this.spinnerCompany.setAdapter(this.companyAdapter);
 		}catch(Exception e){
 			e.printStackTrace();
