@@ -1,22 +1,24 @@
 package com.chingluh.android.model;
 
-public class PubCompany {
+import com.chingluh.android.base.BaseModel;
+
+public class PubCompany implements BaseModel{
 	private String companyId;
 	private String companyName;
 
-	public String getCompanyId() {
+	public String getCompanyId(){
 		return this.companyId;
 	}
 
-	public void setCompanyId(String companyId) {
-		this.companyId = companyId;
+	public void setCompanyId(String companyId){
+		this.companyId=companyId;
 	}
 
-	public String getCompanyName() {
+	public String getCompanyName(){
 		return this.companyName;
 	}
 
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
+	public void setCompanyName(String companyName){
+		this.companyName=companyName;
 	}
 }

@@ -3,7 +3,7 @@
  */
 package com.chingluh.android.activity.com;
 
-import com.chingluh.android.activity.BaseActivity;
+import com.chingluh.android.base.BaseActivity;
 import com.chingluh.android.R;
 
 import android.os.Bundle;

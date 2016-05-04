@@ -1,4 +1,4 @@
-package com.chingluh.android.activity;
+package com.chingluh.android.base;
 
 import com.chingluh.android.activity.com.LoginActivity;
 import com.chingluh.android.app.AppData;
