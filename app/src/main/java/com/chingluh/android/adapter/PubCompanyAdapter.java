@@ -15,21 +15,16 @@ import com.chingluh.android.model.PubCompany;
 import java.util.List;
 
 public class PubCompanyAdapter extends BaseSpinnerAdapter{
-	private int layoutId;
-	public PubCompanyAdapter(Context context,ListView listView,List<BaseModel> alModel,int layoutId){
+	public PubCompanyAdapter(Context context,ListView listView,List<BaseModel> alModel){
 		super(context,listView,alModel);
-		//
-		this.layoutId=layoutId;
 	}
 
 	@Override
 	public View getView(int position,View convertView,ViewGroup parent){
 		if(convertView==null){
-			convertView=layoutInflater.inflate(this.layoutId,parent,false);
-			TextView textViewCompanyId=(TextView)convertView.findViewById(R.id.textViewCompanyId);
+			convertView=layoutInflater.inflate(R.layout.spinner_item_company,parent,false);
 			TextView textViewCompanyName=(TextView)convertView.findViewById(R.id.textViewCompanyName);
 			PubCompany pubCompany=(PubCompany)this.getItem(position);
-			textViewCompanyId.setText(pubCompany.getCompanyId());
 			textViewCompanyName.setText(pubCompany.getCompanyName());
 		}
 		if(convertView.getTag()==null){

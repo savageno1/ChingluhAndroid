@@ -48,7 +48,7 @@ public class InitHandler extends Handler{
 				alPubCompany.add(mapCompany.get(iterator.next()));
 			}
 			//提供公司别数组给配适器
-			this.companyAdapter=new PubCompanyAdapter(this.activity,this.listView,alPubCompany,R.layout.spinner_item_company);
+			this.companyAdapter=new PubCompanyAdapter(this.activity,this.listView,alPubCompany);
 			this.spinnerCompany.setAdapter(this.companyAdapter);
 		}catch(Exception e){
 			e.printStackTrace();
