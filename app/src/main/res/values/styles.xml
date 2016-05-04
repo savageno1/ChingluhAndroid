@@ -4,26 +4,24 @@
 		by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
 
 
+	-->	<style name="AppBaseTheme" parent="@android:style/Theme.Light.NoTitleBar">
+	<!--
+		Theme customizations available in newer API levels can go in
+		res/values-vXX/styles.xml, while customizations related to
+		backward-compatibility can go here.
+
+
 	-->
-	<style name="AppBaseTheme" parent="@android:style/Theme.Light.NoTitleBar">
-		<!--
-			Theme customizations available in newer API levels can go in
-			res/values-vXX/styles.xml, while customizations related to
-			backward-compatibility can go here.
+</style>
 
-
-		-->
-	</style>
-
-	<style name="FullScreenTheme" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-	<!-- Application theme. -->
-	<style name="AppTheme" parent="AppBaseTheme">
-		<item name="android:buttonStyle">@style/Chingluh_Style_Button</item>
-		<item name="android:textViewStyle">@style/Chingluh_Style_TextView</item>
-		<item name="android:editTextStyle">@style/Chingluh_Style_EditText</item>
-		<item name="android:spinnerStyle">@style/Chingluh_Style_Spinner</item>
-		<item name="android:dropDownSpinnerStyle">@style/Chingluh_ItemStyle_Spinner</item>
-	</style>
+	<style name="FullScreenTheme" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+	<!-- Application theme. -->	<style name="AppTheme" parent="AppBaseTheme">
+	<item name="android:buttonStyle">@style/Chingluh_Style_Button</item>
+	<item name="android:textViewStyle">@style/Chingluh_Style_TextView</item>
+	<item name="android:editTextStyle">@style/Chingluh_Style_EditText</item>
+	<item name="android:spinnerStyle">@style/Chingluh_Style_Spinner</item>
+	<item name="android:dropDownSpinnerStyle">@style/Chingluh_ItemStyle_Spinner</item>
+</style>
 
 	<style name="Chingluh_Style_Spinner">
 		<item name="android:background">@drawable/spinner_background</item>
