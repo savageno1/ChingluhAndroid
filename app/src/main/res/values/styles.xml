@@ -16,7 +16,7 @@
 		<item name="android:textViewStyle">@style/Chingluh_Style_TextView</item>
 		<item name="android:editTextStyle">@style/Chingluh_Style_EditText</item>
 		<item name="android:spinnerStyle">@style/Chingluh_Style_Spinner</item>
-		<item name="android:alertDialogStyle">@style/Chingluh_Style_AlertDialog</item>
+		<!--<item name="android:alertDialogStyle">@style/Chingluh_Style_AlertDialog</item>-->
 	</style>
 
 	<style name="Chingluh_Style_Spinner">
