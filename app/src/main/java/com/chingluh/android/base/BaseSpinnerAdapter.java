@@ -14,9 +14,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public abstract class BaseSpinnerAdapter extends BaseAdapter implements OnScrollListener{
-	protected LayoutInflater layoutInflater;
-	protected int scrollState=OnScrollListener.SCROLL_STATE_IDLE;
-	protected List<Runnable> alRunnable=new ArrayList<Runnable>();
+	private LayoutInflater layoutInflater;
+	private int scrollState=OnScrollListener.SCROLL_STATE_IDLE;
+	private List<Runnable> alRunnable=new ArrayList<Runnable>();
 	private List<BaseModel> alModel;
 	private ListView listView;
 
@@ -25,6 +25,10 @@ public abstract class BaseSpinnerAdapter extends BaseAdapter implements OnScroll
 		this.alModel=alModel;
 		this.listView=listView;
 		this.listView.setOnScrollListener(this);
+	}
+
+	public LayoutInflater getLayoutInflater(){
+		return layoutInflater;
 	}
 
 	@Override
@@ -46,6 +50,7 @@ public abstract class BaseSpinnerAdapter extends BaseAdapter implements OnScroll
 	public abstract View getView(int position,View convertView,ViewGroup parent);
 
 	public abstract void updateView(BaseViewHolder viewHolder,BaseModel baseModel);
+
 
 	@Override
 	public void onScrollStateChanged(AbsListView view,int scrollState){

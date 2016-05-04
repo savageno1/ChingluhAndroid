@@ -21,4 +21,12 @@ public class PubCompany implements BaseModel{
 	public void setCompanyName(String companyName){
 		this.companyName=companyName;
 	}
+
+	@Override
+	public int compareTo(Object another){
+		int iRtn=0;
+		PubCompany pubCompany=(PubCompany)another;
+		iRtn=this.companyId.compareTo(pubCompany.getCompanyId());
+		return iRtn;
+	}
 }

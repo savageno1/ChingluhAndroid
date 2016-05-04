@@ -16,6 +16,7 @@ import com.chingluh.android.util.MapForSerializable;
 import com.chingluh.android.util.MessageUtil;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -35,19 +36,24 @@ public class InitHandler extends Handler{
 
 	@Override
 	public void handleMessage(Message message){
-		Bundle bundle=message.getData();
-		if(MessageUtil.showMessageError(this.activity,Toast.LENGTH_LONG,bundle)){
-			return;
+		try{
+			Bundle bundle=message.getData();
+			if(MessageUtil.showMessageError(this.activity,Toast.LENGTH_LONG,bundle)){
+				return;
+			}
+			//组公司别
+			Map<String,PubCompany> mapCompany=(Map<String,PubCompany>)((MapForSerializable)bundle.getSerializable("mapCompany")).getMap();
+			Iterator<String> iterator=mapCompany.keySet().iterator();
+			List<BaseModel> alPubCompany=new ArrayList<BaseModel>();
+			while(iterator.hasNext()){
+				alPubCompany.add(mapCompany.get(iterator.next()));
+			}
+			//提供公司别数组给配适器
+			Collections.sort(alPubCompany);
+			this.companyAdapter=new PubCompanyAdapter(this.activity,this.listView,alPubCompany);
+			this.spinnerCompany.setAdapter(this.companyAdapter);
+		}catch(Exception e){
+			e.printStackTrace();
 		}
-		//组公司别
-		Map<String,PubCompany> mapCompany=(Map<String,PubCompany>)((MapForSerializable)bundle.getSerializable("mapCompany")).getMap();
-		Iterator<String> iterator=mapCompany.keySet().iterator();
-		List<BaseModel> alPubCompany=new ArrayList<BaseModel>();
-		while(iterator.hasNext()){
-			alPubCompany.add(mapCompany.get(iterator.next()));
-		}
-		//提供公司别数组给配适器
-		this.companyAdapter=new PubCompanyAdapter(this.activity,this.listView,alPubCompany);
-		this.spinnerCompany.setAdapter(this.companyAdapter);
 	}
 }

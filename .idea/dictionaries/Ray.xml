@@ -2,6 +2,8 @@
   <dictionary name="Ray">
     <words>
       <w>chingluh</w>
+      <w>companyid</w>
+      <w>companyname</w>
       <w>textcolor</w>
     </words>
   </dictionary>
