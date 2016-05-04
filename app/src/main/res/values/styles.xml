@@ -1,0 +1,52 @@
+<resources>
+	<!--
+		Base application theme, dependent on API level. This theme is replaced
+		by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
+	-->
+	<style name="AppBaseTheme" parent="@android:style/Theme.Light.NoTitleBar">
+		<!--
+			Theme customizations available in newer API levels can go in
+			res/values-vXX/styles.xml, while customizations related to
+			backward-compatibility can go here.
+
+
+		-->
+	</style>
+
+	<style name="FullScreenTheme" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+	<!-- Application theme. -->
+	<style name="AppTheme" parent="AppBaseTheme">
+		<item name="android:buttonStyle">@style/Chingluh_Style_Button</item>
+		<item name="android:textViewStyle">@style/Chingluh_Style_TextView</item>
+		<item name="android:editTextStyle">@style/Chingluh_Style_EditText</item>
+		<item name="android:spinnerStyle">@style/Chingluh_Style_Spinner</item>
+	</style>
+
+	<style name="Chingluh_Style_Button">
+		<item name="android:background">@drawable/button_background</item>
+		<item name="android:textColor">@drawable/button_textcolor</item>
+		<item name="android:gravity">center</item>
+	</style>
+
+	<style name="Chingluh_Style_Spinner">
+		<item name="android:background">@drawable/spinner_background</item>
+		<item name="android:textColor">@drawable/spinner_textcolor</item>
+		<item name="android:spinnerStyle">@android:style/Widget.Spinner</item>
+		<item name="android:spinnerDropDownItemStyle">@android:style/Widget.Spinner.DropDown</item>
+	</style>
+
+	<style name="Chingluh_Style_TextView">
+		<item name="android:textSize">24sp</item>
+		<item name="android:textColor">@color/Chingluh_Blue</item>
+		<item name="android:padding">5dp</item>
+	</style>
+
+	<style name="Chingluh_Style_EditText">
+		<item name="android:textSize">24sp</item>
+		<item name="android:textColor">@color/Chingluh_Black</item>
+		<item name="android:background">@color/Chingluh_Gray</item>
+		<item name="android:padding">5dp</item>
+	</style>
+</resources>
