@@ -7,7 +7,7 @@ import com.chingluh.android.R;
 import com.chingluh.android.config.AppConfig;
 import com.chingluh.android.handler.LoginHandler;
 import com.chingluh.android.model.PubCompany;
-import com.chingluh.android.util.ConnUtil;
+import com.chingluh.android.util.HttpUtil;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Message;
@@ -43,7 +43,7 @@ public class LoginThread implements Runnable {
 			hmParam.put("companyId", ((PubCompany) this.spinnerCompany.getSelectedItem()).getCompanyId());
 			hmParam.put("lang", "CHS");
 			//
-			JSONObject joMsg = ConnUtil.getMsg("console/login/" + "android/checkIn?", hmParam).getJSONObject("joMsg");
+			JSONObject joMsg = HttpUtil.getMsg("console/login/" + "android/checkIn?", hmParam).getJSONObject("joMsg");
 			//
 			if (joMsg.has("rtnMsg")) {
 				throw new Exception(this.activity.getString(R.string.MessageUtil_Message_CheckInFail) + "\n" + joMsg.getString("rtnMsg"));
