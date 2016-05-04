@@ -7,7 +7,7 @@ import org.json.JSONObject;
 import com.chingluh.android.config.AppConfig;
 import com.chingluh.android.handler.InitHandler;
 import com.chingluh.android.model.PubCompany;
-import com.chingluh.android.util.HttpUtil;
+import com.chingluh.android.util.ConnUtil;
 import com.chingluh.android.util.MapForSerializable;
 import com.chingluh.android.util.NetworkUtil;
 import android.app.Activity;
@@ -32,7 +32,7 @@ public class InitThread implements Runnable {
 			HashMap<String, Object> hmParam = new HashMap<String, Object>();
 			hmParam.put("macAddress=", NetworkUtil.getLoaclMacAddress(this.activity));
 			//取值
-			JSONObject joMsg = HttpUtil.getMsg("console/login/" + "android/init?", hmParam).getJSONObject("joMsg");
+			JSONObject joMsg = ConnUtil.getMsg("console/login/" + "android/init?", hmParam).getJSONObject("joMsg");
 			//
 			Map<String, PubCompany> mapCompany = new HashMap<String, PubCompany>();
 			JSONArray jaCompany = joMsg.getJSONArray("jaCompany");

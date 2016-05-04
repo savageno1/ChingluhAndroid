@@ -13,7 +13,7 @@ import java.util.Map;
 import org.json.JSONObject;
 import com.chingluh.android.app.AppData;
 
-public class HttpUtil{
+public class ConnUtil{
 	private static Map<String, URL> HM_URL;
 	private static String STR_BASE_URL_172 = "http://10.2.2.2:80/chingluh-web-server/";
 	private static String STR_BASE_URL_192 = "http://192.168.0.253:8080/chingluh-web-server/";
@@ -25,17 +25,17 @@ public class HttpUtil{
 	 * @throws Exception
 	 */
 	private static HttpURLConnection getConnection(String componentName) throws Exception {
-		if (HttpUtil.HM_URL == null) {
-			HttpUtil.HM_URL = new HashMap<String, URL>();
+		if (ConnUtil.HM_URL == null) {
+			ConnUtil.HM_URL = new HashMap<String, URL>();
 		}
-		if (!HttpUtil.HM_URL.containsKey(componentName)) {
+		if (!ConnUtil.HM_URL.containsKey(componentName)) {
 			if (!AppData.getIpAddressV4().startsWith("192.168.0.")) {
-				HttpUtil.HM_URL.put(componentName, new URL(HttpUtil.STR_BASE_URL_172 + componentName));
+				ConnUtil.HM_URL.put(componentName, new URL(ConnUtil.STR_BASE_URL_172 + componentName));
 			} else {
-				HttpUtil.HM_URL.put(componentName, new URL(HttpUtil.STR_BASE_URL_192 + componentName));
+				ConnUtil.HM_URL.put(componentName, new URL(ConnUtil.STR_BASE_URL_192 + componentName));
 			}
 		}
-		URL url = HttpUtil.HM_URL.get(componentName);
+		URL url = ConnUtil.HM_URL.get(componentName);
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setDoInput(true);
 		connection.setDoOutput(true);
