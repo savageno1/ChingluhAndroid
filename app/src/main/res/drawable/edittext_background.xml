@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-	<item android:state_pressed="false">
+	<item android:state_window_focused="false">
 		<shape android:shape="rectangle">
-			<solid android:color="@color/Chingluh_Blue" />
+			<solid android:color="@color/Chingluh_Transparent" />
 			<corners android:radius="5dp" />
-			<size android:height="60dp" />
+			<size android:height="50dp" />
 			<padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp" />
-			<stroke android:width="10dp" android:color="@color/Chingluh_Transparent" />
+			<stroke android:width="5dp" android:color="@color/Chingluh_Blue" />
 		</shape>
 	</item>
-	<item android:state_pressed="true">
+	<item android:state_focused="true">
 		<shape android:shape="rectangle">
-			<solid android:color="@color/Chingluh_Gray" />
+			<solid android:color="@color/Chingluh_Transparent" />
 			<corners android:radius="5dp" />
-			<size android:height="60dp" />
+			<size android:height="50dp" />
 			<padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp" />
-			<stroke android:width="10dp" android:color="@color/Chingluh_Transparent" />
+			<stroke android:width="5dp" android:color="@color/Chingluh_Blue_Dark" />
 		</shape>
 	</item>
 </selector>

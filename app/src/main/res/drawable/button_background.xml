@@ -4,18 +4,18 @@
 		<shape android:shape="rectangle">
 			<solid android:color="@color/Chingluh_Blue" />
 			<corners android:radius="5dp" />
-			<size android:height="60dp" />
+			<size android:height="50dp" />
 			<padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp" />
-			<stroke android:width="10dp" android:color="@color/Chingluh_Transparent" />
+			<!--<stroke android:width="10dp" android:color="@color/Chingluh_Transparent" />-->
 		</shape>
 	</item>
 	<item android:state_pressed="true">
 		<shape android:shape="rectangle">
 			<solid android:color="@color/Chingluh_Gray" />
 			<corners android:radius="5dp" />
-			<size android:height="60dp" />
+			<size android:height="50dp" />
 			<padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp" />
-			<stroke android:width="10dp" android:color="@color/Chingluh_Transparent" />
+			<!--<stroke android:width="10dp" android:color="@color/Chingluh_Transparent" />-->
 		</shape>
 	</item>
 </selector>
