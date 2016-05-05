@@ -61,7 +61,7 @@
 	<Spinner
 		android:id="@+id/spinnerCompany"
 		android:layout_width="fill_parent"
-		android:layout_height="60dp"/>
+		android:layout_height="60dp" />
 
 	<Button
 		android:id="@+id/buttonQrLogin"
