@@ -12,7 +12,7 @@
 	<style name="FullScreenTheme" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 	<!-- Application theme. -->
 	<style name="AppTheme" parent="AppBaseTheme">
-		<!--<item name="android:layout_margin">10dp</item>-->
+		<!--<item name="android:layout_margin">10dip</item>-->
 		<item name="android:buttonStyle">@style/Chingluh_Style_Button</item>
 		<item name="android:textViewStyle">@style/Chingluh_Style_TextView</item>
 		<item name="android:editTextStyle">@style/Chingluh_Style_EditText</item>
@@ -34,14 +34,14 @@
 	<style name="Chingluh_Style_TextView">
 		<item name="android:textSize">24sp</item>
 		<item name="android:textColor">@color/Chingluh_Blue</item>
-		<item name="android:padding">5dp</item>
+		<item name="android:padding">5dip</item>
 	</style>
 
 	<style name="Chingluh_Style_EditText" parent="@style/Widget.AppCompat.EditText">
 		<item name="android:textSize">24sp</item>
 		<item name="android:textColor">@color/Chingluh_Blue</item>
 		<item name="android:gravity">center_horizontal|left</item>
-		<item name="android:layout_margin">10dp</item>
+		<item name="android:layout_margin">10dip</item>
 		<item name="android:background">@drawable/edittext_background</item>
 	</style>
 </resources>
