@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="match_parent"
+	android:background="@color/Chingluh_Blue"
+	android:gravity="center"
+	android:orientation="horizontal">
+
+	<TextView
+		android:id="@+id/textViewCompanyName"
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:background="@color/Chingluh_Transparent"
+		android:gravity="center"
+		android:text="textView"
+		android:textColor="@color/Chingluh_Gray"
+		android:textSize="20sp" />
+</LinearLayout>
