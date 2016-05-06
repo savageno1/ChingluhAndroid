@@ -17,6 +17,7 @@
 		<item name="android:textViewStyle">@style/Chingluh_Style_TextView</item><!--标签-->
 		<item name="android:editTextStyle">@style/Chingluh_Style_EditText</item><!--输入框-->
 		<item name="android:spinnerStyle">@style/Chingluh_Style_Spinner</item><!--下拉选择框-->
+		<item name="android:scrollbarStyle">insideOverlay</item><!--滚动条内嵌并显示在上层-->
 	</style>
 
 	<style name="Chingluh_Style_Spinner">
