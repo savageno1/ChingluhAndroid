@@ -10,6 +10,7 @@
     <string name="TextView_UserId_Text">用户名</string>
     <string name="TextView_Password_Text">密码</string>
     <string name="Button_Login_Text">登录</string>
+    <string name="Button_Local_Text">单机使用</string>
     <string name="TextView_Company_Text">公司</string>
     <string name="MessageUtil_Message_InitSystemData">正在初始化系统信息</string>
     <string name="MessageUtil_Message_CheckingIn">正在登录系统</string>
