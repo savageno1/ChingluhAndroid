@@ -3,11 +3,13 @@ package com.chingluh.android.base;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.view.KeyEvent;
 
 import com.chingluh.android.R;
+import com.chingluh.android.activity.com.LoginActivity;
 
 public class BaseActivityWithoutLogin extends Activity{
 	//按钮监听器
@@ -16,6 +18,8 @@ public class BaseActivityWithoutLogin extends Activity{
 		public void onClick(DialogInterface dialog,int which){
 			switch(which){
 				case DialogInterface.BUTTON_POSITIVE://确认按钮
+					Intent intentLogin=new Intent(BaseActivityWithoutLogin.this,LoginActivity.class);
+					startActivity(intentLogin);
 					finish();
 					break;
 				case DialogInterface.BUTTON_NEGATIVE://取消按钮
