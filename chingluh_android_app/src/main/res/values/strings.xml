@@ -19,5 +19,10 @@
     <string name="MessageUtil_Message_CheckInFail">登录失败</string>
     <string name="MessageUtil_Message_Login_Welcome">欢迎登陆</string>
     <string name="Button_QrLogin_Text">二维码登录</string>
+    <string name="Button_Scanlabel_Open_Text">打开</string>
+    <string name="Button_Scanlabel_Set_Text">设置</string>
+    <string name="Button_Scanlabel_Close_Text">关闭</string>
+    <string name="Button_Scanlabel_Read_Text">读取</string>
+    <string name="Button_Scanlabel_Stop_Text">停止</string>
     <string name="MessageUtil_Message_Wrong_Result">二维码错误</string>
 </resources>

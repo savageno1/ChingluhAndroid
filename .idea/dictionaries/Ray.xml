@@ -5,6 +5,7 @@
       <w>companyid</w>
       <w>companyname</w>
       <w>edittext</w>
+      <w>scanlabel</w>
       <w>textcolor</w>
       <w>withlogin</w>
       <w>withoutlogin</w>
