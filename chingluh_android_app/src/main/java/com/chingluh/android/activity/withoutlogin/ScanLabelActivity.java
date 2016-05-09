@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.chingluh.android.R;
 import com.chingluh.android.base.BaseActivityWithoutLogin;
+import com.chingluh.android.thread.ScanLabelCloseThread;
 import com.chingluh.android.thread.ScanLabelOpenThread;
 
 /**
@@ -19,6 +20,7 @@ public class ScanLabelActivity extends BaseActivityWithoutLogin{
 					new Thread(new ScanLabelOpenThread(ScanLabelActivity.this)).start();
 					break;
 				case R.id.buttonScanLabelClose:
+					new Thread(new ScanLabelCloseThread(ScanLabelActivity.this)).start();
 					break;
 			}
 		}

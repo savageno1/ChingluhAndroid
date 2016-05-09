@@ -9,6 +9,8 @@ import android.widget.Toast;
 import com.chingluh.android.R;
 import com.chingluh.android.util.MessageUtil;
 
+import java.io.Serializable;
+
 public class ScanLabelHandler extends Handler{
 	private Activity activity;
 
@@ -40,7 +42,7 @@ public class ScanLabelHandler extends Handler{
 		//跳转
 	}
 
-	public enum OptType{
+	public enum OptType implements Serializable{
 		Open(0),Close(1);
 		private int value;
 

@@ -7,7 +7,13 @@ import android.os.Message;
 import com.chingluh.android.base.BaseThread;
 import com.chingluh.android.config.AppConfig;
 import com.chingluh.android.handler.ScanLabelHandler;
+import com.chingluh.android.util.MapForSerializable;
 import com.chingluh.android.util.UfhUtil;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.chingluh.android.handler.ScanLabelHandler.OptType.Close;
 
 /**
  * Created by Ray on 2016/05/09.
@@ -23,7 +29,7 @@ public class ScanLabelCloseThread extends BaseThread{
 		Bundle bundle=new Bundle();
 		try{
 			int iRtn=UfhUtil.UhfGetData.CloseUhf();
-			bundle.putInt("OptType",ScanLabelHandler.OptType.Close.getValue());
+			bundle.putSerializable("OptType",Close);
 			bundle.putInt("OptValue",iRtn);
 		}catch(Exception exception){
 			bundle.putString(AppConfig.STR_EXCEPTION,exception.getMessage());

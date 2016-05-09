@@ -9,6 +9,8 @@ import com.chingluh.android.config.AppConfig;
 import com.chingluh.android.handler.ScanLabelHandler;
 import com.chingluh.android.util.UfhUtil;
 
+import static com.chingluh.android.handler.ScanLabelHandler.OptType.Open;
+
 /**
  * Created by Ray on 2016/05/09.
  */
@@ -23,7 +25,7 @@ public class ScanLabelOpenThread extends BaseThread{
 		Bundle bundle=new Bundle();
 		try{
 			int iRtn=UfhUtil.UhfGetData.OpenUhf(57600,(byte)0xff,4,1,null);
-			bundle.putInt("OptType",ScanLabelHandler.OptType.Open.getValue());
+			bundle.putSerializable("OptType",Open);
 			bundle.putInt("OptValue",iRtn);
 		}catch(Exception exception){
 			bundle.putString(AppConfig.STR_EXCEPTION,exception.getMessage());
