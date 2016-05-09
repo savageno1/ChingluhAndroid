@@ -5,7 +5,9 @@
       <w>companyid</w>
       <w>companyname</w>
       <w>edittext</w>
+      <w>realname</w>
       <w>scanlabel</w>
+      <w>soundid</w>
       <w>tabhost</w>
       <w>textcolor</w>
       <w>withlogin</w>
