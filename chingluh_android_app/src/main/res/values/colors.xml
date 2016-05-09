@@ -17,8 +17,9 @@
 	<color name="Chingluh_Blue">#0067ac</color>
 	<color name="Chingluh_Blue_Dark">#00458A</color>
 	<color name="Chingluh_Gray">#c4c4c4</color>
+	<color name="Chingluh_Gray_Dark">#a4a4a4</color>
 	<color name="Chingluh_White">#FFFFFF</color>
-	<color name="Chingluh_Oragne">#ff662a</color>
+	<color name="Chingluh_Orange">#ff662a</color>
 	<color name="Chingluh_Black">#000000</color>
 	<color name="Chingluh_Transparent">@android:color/transparent</color>
 </resources>

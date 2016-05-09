@@ -1,83 +1,77 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/scrollView"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
 
-	<LinearLayout
+	<TableRow
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		android:padding="10dip">
+		android:layout_height="wrap_content">
 
-		<TableRow
+		<Button
+			android:id="@+id/buttonScanLabelOpen"
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:layout_weight="1"
+			android:text="@string/Button_Scanlabel_Open_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
 
-			<Button
-				android:id="@+id/buttonScanLabelOpen"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="3dip"
-				android:layout_weight="1"
-				android:text="@string/Button_Scanlabel_Open_Text"
-				android:textAppearance="?android:attr/textAppearanceLarge" />
-
-			<Button
-				android:id="@+id/buttonScanLabelRead"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="3dip"
-				android:layout_weight="1"
-				android:text="@string/Button_Scanlabel_Read_Text"
-				android:textAppearance="?android:attr/textAppearanceLarge" />
-
-			<Button
-				android:id="@+id/buttonScanLabelSet"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="3dip"
-				android:layout_weight="1"
-				android:text="@string/Button_Scanlabel_Set_Text"
-				android:textAppearance="?android:attr/textAppearanceLarge" />
-
-			<Button
-				android:id="@+id/buttonScanLabelClose"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="3dip"
-				android:layout_weight="1"
-				android:text="@string/Button_Scanlabel_Close_Text"
-				android:textAppearance="?android:attr/textAppearanceLarge" />
-		</TableRow>
-
-		<TableRow
+		<Button
+			android:id="@+id/buttonScanLabelRead"
 			android:layout_width="fill_parent"
-			android:layout_height="match_parent">
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:layout_weight="1"
+			android:text="@string/Button_Scanlabel_Read_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
 
-			<Button
-				android:id="@+id/buttonScanLabel6B"
-				style="@style/Chingluh_Style_Button_Small"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="3dip"
-				android:layout_weight="1"
-				android:text="@string/Button_Scanlabel_6B_Text"
-				android:textAppearance="?android:attr/textAppearanceLarge" />
-
-			<Button
-				android:id="@+id/buttonScanLabel6C"
-				style="@style/Chingluh_Style_Button_Small"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="3dip"
-				android:layout_weight="1"
-				android:text="@string/Button_Scanlabel_6C_Text"
-				android:textAppearance="?android:attr/textAppearanceLarge" />
-		</TableRow>
-
-		<ListView
-			android:id="@+id/listView"
+		<Button
+			android:id="@+id/buttonScanLabelSet"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent" />
-	</LinearLayout>
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:layout_weight="1"
+			android:text="@string/Button_Scanlabel_Set_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<Button
+			android:id="@+id/buttonScanLabelClose"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:layout_weight="1"
+			android:text="@string/Button_Scanlabel_Close_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
+	</TableRow>
+
+	<TableRow
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<Button
+			android:id="@+id/buttonScanLabel6B"
+			style="@style/Chingluh_Style_Button_Small"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:layout_weight="1"
+			android:text="@string/Button_Scanlabel_6B_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<Button
+			android:id="@+id/buttonScanLabel6C"
+			style="@style/Chingluh_Style_Button_Small"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:layout_weight="1"
+			android:text="@string/Button_Scanlabel_6C_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
+	</TableRow>
+
+	<ListView
+		android:id="@+id/listView"
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:layout_margin="3dip" />
 </LinearLayout>

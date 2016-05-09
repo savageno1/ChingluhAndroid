@@ -31,6 +31,13 @@ public class ScanLabelActivity extends BaseActivityWithoutLogin{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_scanlabel);
 		//
+		findViewById(R.id.buttonScanLabelOpen).setEnabled(true);
+		findViewById(R.id.buttonScanLabelRead).setEnabled(false);
+		findViewById(R.id.buttonScanLabelSet).setEnabled(false);
+		findViewById(R.id.buttonScanLabelClose).setEnabled(false);
+		findViewById(R.id.buttonScanLabel6B).setEnabled(false);
+		findViewById(R.id.buttonScanLabel6C).setEnabled(false);
+		//
 		findViewById(R.id.buttonScanLabelOpen).setOnClickListener(onClickListener);
 		findViewById(R.id.buttonScanLabelRead).setOnClickListener(onClickListener);
 		findViewById(R.id.buttonScanLabelSet).setOnClickListener(onClickListener);

@@ -17,6 +17,7 @@
 		<item name="android:editTextStyle">@style/Chingluh_Style_EditText</item>
 		<item name="android:spinnerStyle">@style/Chingluh_Style_Spinner</item>
 		<item name="android:scrollViewStyle">@style/Chingluh_Style_ScrollView</item>
+		<item name="android:listViewStyle">@style/Chingluh_Style_List</item>
 	</style>
 
 	<style name="Chingluh_Style_ScrollView">
@@ -57,5 +58,6 @@
 
 	<style name="Chingluh_Style_List">
 		<item name="android:background">@drawable/list_background</item>
+		<item name="android:padding">5dip</item>
 	</style>
 </resources>
