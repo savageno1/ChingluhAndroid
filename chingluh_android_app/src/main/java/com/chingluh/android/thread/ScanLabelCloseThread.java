@@ -30,7 +30,7 @@ public class ScanLabelCloseThread extends BaseThread{
 		try{
 			int iRtn=UfhUtil.UhfGetData.CloseUhf();
 			bundle.putSerializable("OptType",Close);
-			bundle.putInt("OptValue",iRtn);
+			bundle.putInt("OptRtn",iRtn);
 		}catch(Exception exception){
 			bundle.putString(AppConfig.STR_EXCEPTION,exception.getMessage());
 		}

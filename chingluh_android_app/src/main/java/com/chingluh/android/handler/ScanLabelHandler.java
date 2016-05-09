@@ -28,30 +28,26 @@ public class ScanLabelHandler extends Handler{
 		String strWelcomeMsg;
 		switch((OptType)bundle.get("OptType")){
 			case Open:
-				//提示信息
-				strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Ufh_Opened)+"!";
+				if(bundle.getInt("OptRtn")==0){
+					strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Ufh_Opened)+"!";
+				}else{
+					strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Ufh_Open_Fail)+"!";
+				}
 				break;
 			case Close:
-				//提示信息
-				strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Ufh_Closed)+"!";
+				if(bundle.getInt("OptRtn")==0){
+					strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Ufh_Closed)+"!";
+				}else{
+					strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Ufh_Close_Fail)+"!";
+				}
 				break;
 			default:
 				strWelcomeMsg="";
 		}
 		MessageUtil.showMessage(this.activity,strWelcomeMsg,Toast.LENGTH_SHORT);
-		//跳转
 	}
 
 	public enum OptType implements Serializable{
-		Open(0),Close(1);
-		private int value;
-
-		OptType(int value){
-			this.value=value;
-		}
-
-		public int getValue(){
-			return value;
-		}
+		Open,Read,Set,Close,R6B,R6C
 	}
 }

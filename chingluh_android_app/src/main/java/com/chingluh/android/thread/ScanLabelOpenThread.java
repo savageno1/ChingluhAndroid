@@ -26,7 +26,7 @@ public class ScanLabelOpenThread extends BaseThread{
 		try{
 			int iRtn=UfhUtil.UhfGetData.OpenUhf(57600,(byte)0xff,4,1,null);
 			bundle.putSerializable("OptType",Open);
-			bundle.putInt("OptValue",iRtn);
+			bundle.putInt("OptRtn",iRtn);
 		}catch(Exception exception){
 			bundle.putString(AppConfig.STR_EXCEPTION,exception.getMessage());
 		}
