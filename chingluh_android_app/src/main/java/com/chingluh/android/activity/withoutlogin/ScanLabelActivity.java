@@ -29,7 +29,7 @@ public class ScanLabelActivity extends BaseActivityWithoutLogin{
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_scanlabel_set);
+		setContentView(R.layout.activity_scanlabel);
 		//
 		findViewById(R.id.buttonScanLabelOpen).setOnClickListener(onClickListener);
 		findViewById(R.id.buttonScanLabelRead).setOnClickListener(onClickListener);

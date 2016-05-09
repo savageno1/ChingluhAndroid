@@ -12,7 +12,6 @@
 		android:layout_height="match_parent"
 		android:background="@color/Chingluh_Transparent"
 		android:gravity="center"
-		android:text="textView"
 		android:textColor="@color/Chingluh_Gray"
 		android:textSize="20sp" />
 </LinearLayout>

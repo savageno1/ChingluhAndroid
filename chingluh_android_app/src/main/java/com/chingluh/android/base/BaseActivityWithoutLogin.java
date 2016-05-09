@@ -3,13 +3,11 @@ package com.chingluh.android.base;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.view.KeyEvent;
 
 import com.chingluh.android.R;
-import com.chingluh.android.activity.com.LoginActivity;
 
 public class BaseActivityWithoutLogin extends Activity{
 	//按钮监听器
@@ -18,8 +16,8 @@ public class BaseActivityWithoutLogin extends Activity{
 		public void onClick(DialogInterface dialog,int which){
 			switch(which){
 				case DialogInterface.BUTTON_POSITIVE://确认按钮
-					Intent intentLogin=new Intent(BaseActivityWithoutLogin.this,LoginActivity.class);
-					startActivity(intentLogin);
+//					Intent intentLogin=new Intent(BaseActivityWithoutLogin.this,LoginActivity.class);
+//					startActivity(intentLogin);
 					finish();
 					break;
 				case DialogInterface.BUTTON_NEGATIVE://取消按钮
@@ -43,7 +41,7 @@ public class BaseActivityWithoutLogin extends Activity{
 			//设置对话框标题
 			alertDialogExit.setTitle(getString(R.string.AlertDialog_Exit_Title));
 			//设置对话框消息
-			alertDialogExit.setMessage(getString(R.string.AlertDialog_Exit_Message));
+			alertDialogExit.setMessage(getString(R.string.AlertDialog_Exit_To_LocalMenu_Message));
 			//添加按钮并注册监听
 			alertDialogExit.setButton(DialogInterface.BUTTON_POSITIVE,getString(R.string.Button_Positive_Title),this.onClickListenerExit);//确认
 			alertDialogExit.setButton(DialogInterface.BUTTON_NEGATIVE,getString(R.string.Button_Negative_Title),this.onClickListenerExit);//取消

@@ -12,12 +12,15 @@
 	<style name="FullScreenTheme" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 	<!-- Application theme. -->
 	<style name="AppTheme" parent="AppBaseTheme">
-		<!--<item name="android:layout_margin">10dip</item>-->
-		<item name="android:buttonStyle">@style/Chingluh_Style_Button</item><!--按钮-->
-		<item name="android:textViewStyle">@style/Chingluh_Style_TextView</item><!--标签-->
-		<item name="android:editTextStyle">@style/Chingluh_Style_EditText</item><!--输入框-->
-		<item name="android:spinnerStyle">@style/Chingluh_Style_Spinner</item><!--下拉选择框-->
-		<item name="android:scrollbarStyle">insideOverlay</item><!--滚动条内嵌并显示在上层-->
+		<item name="android:buttonStyle">@style/Chingluh_Style_Button</item>
+		<item name="android:textViewStyle">@style/Chingluh_Style_TextView</item>
+		<item name="android:editTextStyle">@style/Chingluh_Style_EditText</item>
+		<item name="android:spinnerStyle">@style/Chingluh_Style_Spinner</item>
+		<item name="android:scrollViewStyle">@style/Chingluh_Style_ScrollView</item>
+	</style>
+
+	<style name="Chingluh_Style_ScrollView">
+		<item name="android:scrollbarStyle">insideOverlay</item>
 	</style>
 
 	<style name="Chingluh_Style_Spinner">
@@ -50,5 +53,9 @@
 		<item name="android:gravity">center_horizontal|left</item>
 		<item name="android:layout_margin">10dip</item>
 		<item name="android:background">@drawable/edittext_background</item>
+	</style>
+
+	<style name="Chingluh_Style_List">
+		<item name="android:background">@drawable/list_background</item>
 	</style>
 </resources>

@@ -48,7 +48,7 @@ public class BaseActivityWithLogin extends Activity{
 			//设置对话框标题
 			alertDialogExit.setTitle(getString(R.string.AlertDialog_Exit_Title));
 			//设置对话框消息
-			alertDialogExit.setMessage(getString(R.string.AlertDialog_Exit_Message));
+			alertDialogExit.setMessage(getString(R.string.AlertDialog_Exit_To_Login_Message));
 			//添加按钮并注册监听
 			alertDialogExit.setButton(DialogInterface.BUTTON_POSITIVE,getString(R.string.Button_Positive_Title),this.onClickListenerExit);//确认
 			alertDialogExit.setButton(DialogInterface.BUTTON_NEGATIVE,getString(R.string.Button_Negative_Title),this.onClickListenerExit);//取消

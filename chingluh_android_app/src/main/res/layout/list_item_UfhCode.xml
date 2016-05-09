@@ -6,21 +6,17 @@
 
 	<TextView
 		android:id="@+id/textViewUfhCodeCode"
-		android:layout_width="fill_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_weight="20"
-		android:background="@color/Chingluh_Transparent" />
-
-	<TextView
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_weight="1"
-		android:background="@color/Chingluh_Black" />
+		android:layout_weight="1200"
+		android:background="@color/Chingluh_Transparent"
+		android:textColor="@color/Chingluh_Blue" />
 
 	<TextView
 		android:id="@+id/textViewUfhCodeQty"
-		android:layout_width="fill_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_weight="2"
-		android:background="@color/Chingluh_Transparent" />
+		android:layout_weight="79"
+		android:background="@color/Chingluh_Gray"
+		android:textColor="@color/Chingluh_Blue" />
 </LinearLayout>
