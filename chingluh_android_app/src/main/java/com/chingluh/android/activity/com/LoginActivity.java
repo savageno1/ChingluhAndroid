@@ -27,6 +27,7 @@ public class LoginActivity extends Activity{
 		public void onClick(View v){
 			switch(v.getId()){
 				case R.id.buttonQrLogin:
+					new Thread(new LoginThread(LoginActivity.this)).start();
 					break;
 				case R.id.buttonLogin:
 					new Thread(new LoginThread(LoginActivity.this)).start();
