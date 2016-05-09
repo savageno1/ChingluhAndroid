@@ -30,7 +30,6 @@
 		<activity android:name="com.chingluh.android.activity.withlogin.MainActivity" />
 		<activity android:name="com.chingluh.android.activity.withoutlogin.LocalMenuActivity" />
 		<activity android:name="com.chingluh.android.activity.withoutlogin.ScanLabelActivity" />
-		<activity android:name="com.chingluh.android.activity.withoutlogin.ScanLabelSetActivity" />
 		<activity android:name="com.chingluh.android.activity.withoutlogin.ScanLabel6BActivity" />
 		<activity android:name="com.chingluh.android.activity.withoutlogin.ScanLabel6CActivity" />
 	</application>

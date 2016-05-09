@@ -26,6 +26,6 @@
     <string name="Button_Scanlabel_Stop_Text">停止</string>
     <string name="MessageUtil_Message_Wrong_Result">二维码错误</string>
     <string name="TabHost_Set_Label">设置</string>
-    <string name="TabHost_6B_Label">6B</string>
-    <string name="TabHost_6C_Label">6C</string>
+    <string name="Button_Scanlabel_6B_Text">6B</string>
+    <string name="Button_Scanlabel_6C_Text">6C</string>
 </resources>

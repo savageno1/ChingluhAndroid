@@ -31,6 +31,12 @@
 		<item name="android:textColor">@drawable/button_textcolor</item>
 		<item name="android:gravity">center</item>
 	</style>
+	<style name="Chingluh_Style_Button_Small">
+		<item name="android:background">@drawable/button_background_small</item>
+		<item name="android:textColor">@drawable/button_textcolor</item>
+		<item name="android:gravity">center</item>
+		<item name="android:textSize">18sp</item>
+	</style>
 
 	<style name="Chingluh_Style_TextView">
 		<item name="android:textSize">24sp</item>

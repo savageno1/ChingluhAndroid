@@ -11,37 +11,51 @@
 
 		<TableRow
 			android:layout_width="fill_parent"
-			android:layout_height="match_parent" >
+			android:layout_height="wrap_content" >
 
 			<Button
 				android:id="@+id/buttonScanLabelOpen"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="3dip"
-				android:background="@drawable/button_background"
+				android:background="@drawable/button_background_small"
 				android:text="@string/Button_Scanlabel_Open_Text"
 				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:layout_weight="1" />
+				android:layout_weight="1"
+				style="@style/Chingluh_Style_Button_Small" />
+
+			<Button
+				android:id="@+id/buttonScanLabelRead"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="3dip"
+				android:background="@drawable/button_background_small"
+				android:text="@string/Button_Scanlabel_Read_Text"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_weight="1"
+				style="@style/Chingluh_Style_Button_Small" />
 
 			<Button
 				android:id="@+id/buttonScanLabelSet"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="3dip"
-				android:background="@drawable/button_background"
+				android:background="@drawable/button_background_small"
 				android:text="@string/Button_Scanlabel_Set_Text"
 				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:layout_weight="1" />
+				android:layout_weight="1"
+				style="@style/Chingluh_Style_Button_Small" />
 
 			<Button
 				android:id="@+id/buttonScanLabelClose"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="3dip"
-				android:background="@drawable/button_background"
+				android:background="@drawable/button_background_small"
 				android:text="@string/Button_Scanlabel_Close_Text"
 				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:layout_weight="1" />
+				android:layout_weight="1"
+				style="@style/Chingluh_Style_Button_Small" />
 		</TableRow>
 
 		<TableRow
@@ -49,22 +63,24 @@
 			android:layout_height="match_parent">
 
 			<Button
-				android:id="@+id/buttonScanLabelRead"
+				style="@style/Chingluh_Style_Button_Small"
+				android:id="@+id/buttonScanLabel6B"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="3dip"
-				android:background="@drawable/button_background"
-				android:text="@string/Button_Scanlabel_Read_Text"
+				android:background="@drawable/button_background_small"
+				android:text="@string/Button_Scanlabel_6B_Text"
 				android:textAppearance="?android:attr/textAppearanceLarge"
 				android:layout_weight="1" />
 
 			<Button
-				android:id="@+id/buttonScanLabelStop"
+				style="@style/Chingluh_Style_Button_Small"
+				android:id="@+id/buttonScanLabel6C"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="3dip"
-				android:background="@drawable/button_background"
-				android:text="@string/Button_Scanlabel_Stop_Text"
+				android:background="@drawable/button_background_small"
+				android:text="@string/Button_Scanlabel_6C_Text"
 				android:textAppearance="?android:attr/textAppearanceLarge"
 				android:layout_weight="1" />
 		</TableRow>
