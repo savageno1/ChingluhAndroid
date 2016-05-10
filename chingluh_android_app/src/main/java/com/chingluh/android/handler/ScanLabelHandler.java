@@ -50,7 +50,7 @@ public class ScanLabelHandler extends Handler{
 		if(MessageUtil.showMessageError(this.activity,Toast.LENGTH_LONG,bundle)){
 			return;
 		}
-		String strWelcomeMsg;
+		String strWelcomeMsg=null;
 		switch((OptType)bundle.get("OptType")){
 			case Open:
 				if(bundle.getInt("OptRtn")==0){
@@ -88,6 +88,14 @@ public class ScanLabelHandler extends Handler{
 					//					(activity.findViewById(R.id.buttonScanLabelClose)).setEnabled(true);
 					//					(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(true);
 					//					(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(true);
+				}
+				break;
+			case Scan6B:
+				for(int i=10;i<40;i++){
+					Ufh ufh=new Ufh("UFH"+i);
+					adapter.addItem(ufh);
+					int idx=adapter.getPosition(ufh);
+					listView.smoothScrollToPosition(idx);
 				}
 				break;
 			case Scan6C:
