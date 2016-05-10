@@ -4,10 +4,11 @@
 		<layer-list>
 			<item>
 				<shape android:shape="rectangle">
-					<solid android:color="@color/Chingluh_Blue" />
+					<solid android:color="@color/Chingluh_Transparent" />
 					<corners android:radius="5dip" />
 					<size android:height="50dip" />
 					<padding android:bottom="3dip" android:left="3dip" android:right="3dip" android:top="3dip" />
+					<stroke android:width="3dip" android:color="@color/Chingluh_Blue"/>
 				</shape>
 			</item>
 			<item>
