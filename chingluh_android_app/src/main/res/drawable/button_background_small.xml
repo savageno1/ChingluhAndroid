@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-	<item android:state_pressed="false">
+	<item android:state_enabled="true" android:state_pressed="false">
 		<shape android:shape="rectangle">
 			<solid android:color="@color/Chingluh_Blue" />
 			<corners android:radius="4dip" />
 			<size android:height="40dip" />
 			<padding android:bottom="8dip" android:left="8dip" android:right="8dip" android:top="8dip" />
-			<!--<stroke android:width="8dip" android:color="@color/Chingluh_Transparent" />-->
 		</shape>
 	</item>
-	<item android:state_pressed="true">
+	<item android:state_enabled="true" android:state_pressed="true">
 		<shape android:shape="rectangle">
 			<solid android:color="@color/Chingluh_Gray" />
 			<corners android:radius="4dip" />
 			<size android:height="40dip" />
 			<padding android:bottom="8dip" android:left="8dip" android:right="8dip" android:top="8dip" />
-			<!--<stroke android:width="8dip" android:color="@color/Chingluh_Transparent" />-->
 		</shape>
 	</item>
-	<item android:state_enabled="true" android:drawable="@color/Chingluh_Gray_Dark">
+	<item android:state_enabled="false">
 		<shape android:shape="rectangle">
 			<solid android:color="@color/Chingluh_Gray_Dark" />
 			<corners android:radius="4dip" />
 			<size android:height="40dip" />
 			<padding android:bottom="8dip" android:left="8dip" android:right="8dip" android:top="8dip" />
-			<!--<stroke android:width="8dip" android:color="@color/Chingluh_Transparent" />-->
 		</shape>
 	</item>
 </selector>

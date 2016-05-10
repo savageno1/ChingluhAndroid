@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -55,42 +56,40 @@ public class ScanLabelHandler extends Handler{
 			case Open:
 				if(bundle.getInt("OptRtn")==0){
 					strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Ufh_Opened)+"!";
-					//					(activity.findViewById(R.id.buttonScanLabelOpen)).setEnabled(false);
-					//					(activity.findViewById(R.id.buttonScanLabelRead)).setEnabled(true);
-					//					(activity.findViewById(R.id.buttonScanLabelSet)).setEnabled(true);
-					//					(activity.findViewById(R.id.buttonScanLabelClose)).setEnabled(true);
-					//					(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(true);
-					//					(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(true);
+					(activity.findViewById(R.id.buttonScanLabelOpen)).setEnabled(false);
+					(activity.findViewById(R.id.buttonScanLabelSet)).setEnabled(true);
+					(activity.findViewById(R.id.buttonScanLabelClose)).setEnabled(true);
+					(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(true);
+					(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(true);
 				}else{
 					strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Ufh_Open_Fail)+"!";
-					//					(activity.findViewById(R.id.buttonScanLabelOpen)).setEnabled(true);
-					//					(activity.findViewById(R.id.buttonScanLabelRead)).setEnabled(false);
-					//					(activity.findViewById(R.id.buttonScanLabelSet)).setEnabled(false);
-					//					(activity.findViewById(R.id.buttonScanLabelClose)).setEnabled(false);
-					//					(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(false);
-					//					(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(false);
+					(activity.findViewById(R.id.buttonScanLabelOpen)).setEnabled(true);
+					(activity.findViewById(R.id.buttonScanLabelSet)).setEnabled(false);
+					(activity.findViewById(R.id.buttonScanLabelClose)).setEnabled(false);
+					(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(false);
+					(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(false);
 				}
 				break;
 			case Close:
 				if(bundle.getInt("OptRtn")==0){
 					strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Ufh_Closed)+"!";
-					//					(activity.findViewById(R.id.buttonScanLabelOpen)).setEnabled(true);
-					//					(activity.findViewById(R.id.buttonScanLabelRead)).setEnabled(false);
-					//					(activity.findViewById(R.id.buttonScanLabelSet)).setEnabled(false);
-					//					(activity.findViewById(R.id.buttonScanLabelClose)).setEnabled(false);
-					//					(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(false);
-					//					(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(false);
+					(activity.findViewById(R.id.buttonScanLabelOpen)).setEnabled(true);
+					(activity.findViewById(R.id.buttonScanLabelSet)).setEnabled(false);
+					(activity.findViewById(R.id.buttonScanLabelClose)).setEnabled(false);
+					(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(false);
+					(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(false);
 				}else{
 					strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Ufh_Close_Fail)+"!";
-					//					(activity.findViewById(R.id.buttonScanLabelOpen)).setEnabled(false);
-					//					(activity.findViewById(R.id.buttonScanLabelRead)).setEnabled(true);
-					//					(activity.findViewById(R.id.buttonScanLabelSet)).setEnabled(true);
-					//					(activity.findViewById(R.id.buttonScanLabelClose)).setEnabled(true);
-					//					(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(true);
-					//					(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(true);
+					(activity.findViewById(R.id.buttonScanLabelOpen)).setEnabled(false);
+					(activity.findViewById(R.id.buttonScanLabelSet)).setEnabled(true);
+					(activity.findViewById(R.id.buttonScanLabelClose)).setEnabled(true);
+					(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(true);
+					(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(true);
 				}
 				break;
 			case Scan6B:
+				((Button)(activity.findViewById(R.id.buttonScanLabel6B))).setText(activity.getString(R.string.Button_Scanlabel_Stop_Text));
+				(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(true);
 				for(int i=10;i<40;i++){
 					Ufh ufh=new Ufh("UFH"+i);
 					adapter.addItem(ufh);
@@ -99,6 +98,8 @@ public class ScanLabelHandler extends Handler{
 				}
 				break;
 			case Scan6C:
+				((Button)(activity.findViewById(R.id.buttonScanLabel6C))).setText(activity.getString(R.string.Button_Scanlabel_Stop_Text));
+				(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(true);
 				try{
 					String strLabel=bundle.getString("OptRtnStr");
 					Ufh ufh=new Ufh(strLabel);

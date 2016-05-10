@@ -23,7 +23,6 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
 			android:layout_weight="1"
-			android:enabled="false"
 			android:text="@string/Button_Scanlabel_Open_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -44,7 +43,6 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
 			android:layout_weight="1"
-			android:enabled="false"
 			android:text="@string/Button_Scanlabel_Close_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge" />
 	</TableRow>
@@ -60,7 +58,6 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
 			android:layout_weight="1"
-			android:enabled="false"
 			android:text="@string/Button_Scanlabel_6B_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -71,7 +68,6 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
 			android:layout_weight="1"
-			android:enabled="false"
 			android:text="@string/Button_Scanlabel_6C_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge" />
 	</TableRow>
