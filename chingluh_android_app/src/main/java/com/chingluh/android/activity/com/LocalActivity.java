@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.chingluh.android.R;
-import com.chingluh.android.activity.withoutlogin.ScanLabelActivity;
+import com.chingluh.android.activity.withoutlogin.scanlabel.ScanLabelActivity;
 
 /**
  * Created by Ray on 2016/05/06.

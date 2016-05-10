@@ -1,5 +1,6 @@
-package com.chingluh.android.activity.withoutlogin;
+package com.chingluh.android.activity.withoutlogin.scanlabel;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,6 +21,10 @@ public class ScanLabelActivity extends BaseActivityWithoutLogin{
 			switch(v.getId()){
 				case R.id.buttonScanLabelOpen:
 					new Thread(new ScanLabelOpenThread(ScanLabelActivity.this)).start();
+					break;
+				case R.id.buttonScanLabelSet:
+					Intent intentSacnLabelSet=new Intent(ScanLabelActivity.this,ScanLabelSetActivity.class);
+					startActivity(intentSacnLabelSet);
 					break;
 				case R.id.buttonScanLabelClose:
 					new Thread(new ScanLabelCloseThread(ScanLabelActivity.this)).start();
@@ -47,7 +52,6 @@ public class ScanLabelActivity extends BaseActivityWithoutLogin{
 		//		findViewById(R.id.buttonScanLabel6C).setEnabled(false);
 		//
 		findViewById(R.id.buttonScanLabelOpen).setOnClickListener(onClickListener);
-		findViewById(R.id.buttonScanLabelRead).setOnClickListener(onClickListener);
 		findViewById(R.id.buttonScanLabelSet).setOnClickListener(onClickListener);
 		findViewById(R.id.buttonScanLabelClose).setOnClickListener(onClickListener);
 		findViewById(R.id.buttonScanLabel6B).setOnClickListener(onClickListener);

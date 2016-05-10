@@ -1,0 +1,151 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="bottom"
+	android:orientation="vertical"
+	android:weightSum="1">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:layout_gravity="center_horizontal"
+		android:gravity="center">
+
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical">
+
+			<TextView
+				android:id="@+id/textView_ScanLabel_Version"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.5"
+				android:text="@string/TextView_ScanLabel_Version"
+				android:layout_margin="3dip"
+				android:gravity="end" />
+
+			<EditText
+				android:id="@+id/editText_ScanLabel_Version"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.3"
+				android:layout_margin="3dip" />
+		</TableRow>
+
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical">
+
+			<TextView
+				android:id="@+id/textView_ScanLabel_DMin"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.5"
+				android:text="@string/TextView_ScanLabel_DMin"
+				android:layout_margin="3dip"
+				android:gravity="end" />
+
+			<Spinner
+				android:id="@+id/spinner_ScanLabel_DMin"
+				android:layout_width="fill_parent"
+				android:layout_height="50dip"
+				android:layout_weight="0.3"
+				android:layout_margin="3dip" />
+		</TableRow>
+
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical">
+
+			<TextView
+				android:id="@+id/textView_ScanLabel_DMax"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.5"
+				android:text="@string/TextView_ScanLabel_DMax"
+				android:layout_margin="3dip"
+				android:gravity="end" />
+
+			<Spinner
+				android:id="@+id/spinner_ScanLabel_DMax"
+				android:layout_width="fill_parent"
+				android:layout_height="50dip"
+				android:layout_weight="0.3"
+				android:layout_margin="3dip" />
+		</TableRow>
+
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical">
+
+			<TextView
+				android:id="@+id/textView_ScanLabel_Power"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.5"
+				android:text="@string/TextView_ScanLabel_Power"
+				android:layout_margin="3dip"
+				android:gravity="end" />
+
+			<Spinner
+				android:id="@+id/spinner_ScanLabel_Power"
+				android:layout_width="fill_parent"
+				android:layout_height="50dip"
+				android:layout_weight="0.3"
+				android:layout_margin="3dip" />
+		</TableRow>
+
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical">
+
+			<TextView
+				android:id="@+id/textView_ScanLabel_Time"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.5"
+				android:text="@string/TextView_ScanLabel_Time"
+				android:layout_margin="3dip"
+				android:gravity="end" />
+
+			<EditText
+				android:id="@+id/editText_ScanLabel_Time"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.3"
+				android:layout_margin="3dip" />
+		</TableRow>
+	</LinearLayout>
+
+	<TableRow
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<Button
+			android:id="@+id/buttonScanLabelWrite"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:layout_weight="0.5"
+			android:enabled="true"
+			android:text="@string/Button_Scanlabel_Write_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<Button
+			android:id="@+id/buttonScanLabelBack"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:layout_weight="0.5"
+			android:enabled="true"
+			android:text="@string/Button_Scanlabel_Back_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
+	</TableRow>
+</LinearLayout>

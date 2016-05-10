@@ -30,8 +30,15 @@
 	<string name="Button_Scanlabel_Close_Text">关闭</string>
 	<string name="Button_Scanlabel_Read_Text">读取</string>
 	<string name="Button_Scanlabel_Stop_Text">停止</string>
+	<string name="Button_Scanlabel_Write_Text">写入</string>
+	<string name="Button_Scanlabel_Back_Text">返回</string>
 	<string name="MessageUtil_Message_Wrong_Result">二维码错误</string>
 	<string name="TabHost_Set_Label">设置</string>
 	<string name="Button_Scanlabel_6B_Text">6B</string>
 	<string name="Button_Scanlabel_6C_Text">6C</string>
+	<string name="TextView_ScanLabel_Version">版本:</string>
+	<string name="TextView_ScanLabel_DMin">频率起:</string>
+	<string name="TextView_ScanLabel_DMax">频率止:</string>
+	<string name="TextView_ScanLabel_Power">功率:</string>
+	<string name="TextView_ScanLabel_Time">扫描次数:</string>
 </resources>

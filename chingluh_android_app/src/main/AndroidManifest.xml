@@ -26,9 +26,10 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name="com.chingluh.android.activity.com.LoginActivity" />
-		<activity android:name="com.chingluh.android.activity.com.LocalActivity" />
-		<activity android:name="com.chingluh.android.activity.withlogin.MainActivity" />
-		<activity android:name="com.chingluh.android.activity.withoutlogin.ScanLabelActivity" />
+		<activity android:name=".activity.com.LoginActivity" />
+		<activity android:name=".activity.com.LocalActivity" />
+		<activity android:name=".activity.withlogin.MainActivity" />
+		<activity android:name=".activity.withoutlogin.scanlabel.ScanLabelActivity" />
+		<activity android:name=".activity.withoutlogin.scanlabel.ScanLabelSetActivity" />
 	</application>
 </manifest>
