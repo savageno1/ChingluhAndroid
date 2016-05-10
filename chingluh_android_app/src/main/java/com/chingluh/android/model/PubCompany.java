@@ -2,16 +2,19 @@ package com.chingluh.android.model;
 
 import com.chingluh.android.base.BaseModel;
 
-public class PubCompany implements BaseModel{
+public class PubCompany extends BaseModel{
 	private String companyId;
 	private String companyName;
 
-	public String getCompanyId(){
-		return this.companyId;
+	public PubCompany(String companyId){
+		//必须实现父类的Id赋值
+		super(companyId);
+		//
+		this.companyId=companyId;
 	}
 
-	public void setCompanyId(String companyId){
-		this.companyId=companyId;
+	public String getCompanyId(){
+		return this.companyId;
 	}
 
 	public String getCompanyName(){
@@ -20,13 +23,5 @@ public class PubCompany implements BaseModel{
 
 	public void setCompanyName(String companyName){
 		this.companyName=companyName;
-	}
-
-	@Override
-	public int compareTo(Object another){
-		int iRtn=0;
-		PubCompany pubCompany=(PubCompany)another;
-		iRtn=this.companyId.compareTo(pubCompany.getCompanyId());
-		return iRtn;
 	}
 }

@@ -18,8 +18,8 @@ public class UfhUtil{
 	public static boolean SoundFlag=false;
 	public static boolean SoundTimer=false;
 	public static Timer timer;
-	static Map<String,Integer> scanResult6c=new HashMap<String,Integer>();
-	static Map<String,Integer> scanResult6b=new HashMap<String,Integer>();
+	public static Map<String,Integer> scanResult6c=new HashMap<String,Integer>();
+	public static Map<String,Integer> scanResult6b=new HashMap<String,Integer>();
 	static Map<String,byte[]> epcBytes=new HashMap<String,byte[]>();
 	static SoundPool soundpool=new SoundPool(1,AudioManager.STREAM_NOTIFICATION,100);
 	static ExecutorService soundThread=Executors.newSingleThreadExecutor();

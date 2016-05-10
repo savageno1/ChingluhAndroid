@@ -46,8 +46,7 @@ public class InitThread implements Runnable{
 			JSONArray jaCompany=joMsg.getJSONArray("jaCompany");
 			for(int i=0;i<jaCompany.length();i++){
 				JSONObject joCompany=jaCompany.getJSONObject(i);
-				PubCompany pubCompany=new PubCompany();
-				pubCompany.setCompanyId(joCompany.getString("companyid"));
+				PubCompany pubCompany=new PubCompany(joCompany.getString("companyid"));
 				pubCompany.setCompanyName(joCompany.getString("companyname"));
 				mapCompany.put(pubCompany.getCompanyId(),pubCompany);
 			}

@@ -7,6 +7,8 @@ import com.chingluh.android.R;
 import com.chingluh.android.base.BaseActivityWithoutLogin;
 import com.chingluh.android.thread.ScanLabelCloseThread;
 import com.chingluh.android.thread.ScanLabelOpenThread;
+import com.chingluh.android.thread.ScanLabelScan6BThread;
+import com.chingluh.android.thread.ScanLabelScan6CThread;
 
 /**
  * Created by Ray on 2016/05/06.
@@ -22,6 +24,12 @@ public class ScanLabelActivity extends BaseActivityWithoutLogin{
 				case R.id.buttonScanLabelClose:
 					new Thread(new ScanLabelCloseThread(ScanLabelActivity.this)).start();
 					break;
+				case R.id.buttonScanLabel6B:
+					new Thread(new ScanLabelScan6BThread(ScanLabelActivity.this)).start();
+					break;
+				case R.id.buttonScanLabel6C:
+					new Thread(new ScanLabelScan6CThread(ScanLabelActivity.this)).start();
+					break;
 			}
 		}
 	};
@@ -31,12 +39,12 @@ public class ScanLabelActivity extends BaseActivityWithoutLogin{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_scanlabel);
 		//
-		findViewById(R.id.buttonScanLabelOpen).setEnabled(true);
-		findViewById(R.id.buttonScanLabelRead).setEnabled(false);
-		findViewById(R.id.buttonScanLabelSet).setEnabled(false);
-		findViewById(R.id.buttonScanLabelClose).setEnabled(false);
-		findViewById(R.id.buttonScanLabel6B).setEnabled(false);
-		findViewById(R.id.buttonScanLabel6C).setEnabled(false);
+		//		findViewById(R.id.buttonScanLabelOpen).setEnabled(true);
+		//		findViewById(R.id.buttonScanLabelRead).setEnabled(false);
+		//		findViewById(R.id.buttonScanLabelSet).setEnabled(false);
+		//		findViewById(R.id.buttonScanLabelClose).setEnabled(false);
+		//		findViewById(R.id.buttonScanLabel6B).setEnabled(false);
+		//		findViewById(R.id.buttonScanLabel6C).setEnabled(false);
 		//
 		findViewById(R.id.buttonScanLabelOpen).setOnClickListener(onClickListener);
 		findViewById(R.id.buttonScanLabelRead).setOnClickListener(onClickListener);

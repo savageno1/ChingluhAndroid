@@ -22,14 +22,14 @@ import java.util.Map;
 
 public class InitHandler extends Handler{
 	private Activity activity;
-	private Spinner spinnerCompany;//登陆公司别
-	private PubCompanyAdapter companyAdapter;
+	private Spinner spinner;//登陆公司别
+	private PubCompanyAdapter adapter;
 	private ListView listView;
 
 	public InitHandler(Activity activity){
 		super(activity.getMainLooper());
 		this.activity=activity;
-		this.spinnerCompany=(Spinner)activity.findViewById(R.id.spinnerCompany);
+		this.spinner=(Spinner)activity.findViewById(R.id.spinnerCompany);
 		this.listView=new ListView(activity);
 	}
 
@@ -43,13 +43,15 @@ public class InitHandler extends Handler{
 			//组公司别
 			Map<String,PubCompany> mapCompany=(Map<String,PubCompany>)((MapForSerializable)bundle.getSerializable("mapCompany")).getMap();
 			Iterator<String> iterator=mapCompany.keySet().iterator();
-			List<BaseModel> alPubCompany=new ArrayList<BaseModel>();
+			List<BaseModel> alModel=new ArrayList<BaseModel>();
 			while(iterator.hasNext()){
-				alPubCompany.add(mapCompany.get(iterator.next()));
+				alModel.add(mapCompany.get(iterator.next()));
 			}
 			//提供公司别数组给配适器
-			this.companyAdapter=new PubCompanyAdapter(this.activity,this.listView,alPubCompany);
-			this.spinnerCompany.setAdapter(this.companyAdapter);
+			if(adapter==null){
+				this.adapter=new PubCompanyAdapter(this.activity,this.listView,alModel);
+				this.spinner.setAdapter(this.adapter);
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}
