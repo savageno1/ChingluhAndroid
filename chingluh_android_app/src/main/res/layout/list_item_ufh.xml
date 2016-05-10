@@ -10,6 +10,7 @@
 		android:layout_height="wrap_content"
 		android:layout_weight="1200"
 		android:background="@color/Chingluh_Transparent"
+		android:layout_gravity="start|center_horizontal"
 		android:textColor="@color/Chingluh_Blue" />
 
 	<TextView
@@ -18,5 +19,6 @@
 		android:layout_height="wrap_content"
 		android:layout_weight="79"
 		android:background="@color/Chingluh_Gray"
+		android:layout_gravity="start|center_horizontal"
 		android:textColor="@color/Chingluh_Blue" />
 </LinearLayout>

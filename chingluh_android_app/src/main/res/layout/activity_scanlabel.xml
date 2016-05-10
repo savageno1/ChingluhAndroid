@@ -1,7 +1,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:orientation="vertical">
+	android:orientation="vertical"
+	android:gravity="bottom"
+	android:weightSum="1">
+
+	<ListView
+		android:id="@+id/listView"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_margin="3dip"
+		android:layout_weight="1" />
 
 	<TableRow
 		android:layout_width="fill_parent"
@@ -12,7 +21,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
-			android:layout_weight="1"
+			android:layout_weight="0.25"
 			android:text="@string/Button_Scanlabel_Open_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:enabled="true" />
@@ -22,7 +31,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
-			android:layout_weight="1"
+			android:layout_weight="0.25"
 			android:text="@string/Button_Scanlabel_Read_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:enabled="true" />
@@ -32,7 +41,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
-			android:layout_weight="1"
+			android:layout_weight="0.25"
 			android:text="@string/Button_Scanlabel_Set_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:enabled="true" />
@@ -42,7 +51,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
-			android:layout_weight="1"
+			android:layout_weight="0.25"
 			android:text="@string/Button_Scanlabel_Close_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:enabled="true" />
@@ -58,7 +67,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
-			android:layout_weight="1"
+			android:layout_weight="0.5"
 			android:text="@string/Button_Scanlabel_6B_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:enabled="true" />
@@ -69,15 +78,9 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
-			android:layout_weight="1"
+			android:layout_weight="0.5"
 			android:text="@string/Button_Scanlabel_6C_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:enabled="true" />
 	</TableRow>
-
-	<ListView
-		android:id="@+id/listView"
-		android:layout_width="fill_parent"
-		android:layout_height="match_parent"
-		android:layout_margin="3dip" />
 </LinearLayout>
