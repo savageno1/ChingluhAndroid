@@ -3,12 +3,11 @@ package com.chingluh.android.activity.withoutlogin.scanlabel;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.chingluh.android.R;
-import com.chingluh.android.thread.ScanLabelOpenThread;
+import com.chingluh.android.thread.scanlabel.ScanLabelOpenThread;
 
 /**
  * Created by Ray on 2016/05/06.

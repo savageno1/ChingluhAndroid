@@ -1,4 +1,4 @@
-package com.chingluh.android.thread;
+package com.chingluh.android.thread.scanlabel;
 
 import android.app.Activity;
 import android.os.Bundle;

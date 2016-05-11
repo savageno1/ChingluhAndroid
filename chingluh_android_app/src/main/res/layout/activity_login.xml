@@ -73,9 +73,7 @@
 			android:id="@+id/spinnerCompany"
 			android:layout_width="fill_parent"
 			android:layout_height="50dip"
-			android:layout_margin="3dip"
-			android:paddingEnd="30dp"
-			android:paddingStart="30dp" />
+			android:layout_margin="3dip" />
 
 		<Button
 			android:id="@+id/buttonQrLogin"
