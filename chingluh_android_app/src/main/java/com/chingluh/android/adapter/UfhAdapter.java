@@ -68,4 +68,10 @@ public class UfhAdapter extends BaseListAdapter{
 		}
 		notifyDataSetChanged();
 	}
+
+	@Override
+	public void clearItem(){
+		alModel.clear();
+		notifyDataSetChanged();
+	}
 }

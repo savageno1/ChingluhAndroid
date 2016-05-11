@@ -62,6 +62,16 @@
 			android:textAppearance="?android:attr/textAppearanceLarge" />
 
 		<Button
+			style="@style/Chingluh_Style_Button_Small"
+			android:id="@+id/buttonScanLabelClear"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:layout_weight="1"
+			android:text="@string/Button_Scanlabel_Clear_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<Button
 			android:id="@+id/buttonScanLabel6C"
 			style="@style/Chingluh_Style_Button_Small"
 			android:layout_width="fill_parent"

@@ -23,7 +23,6 @@ public class ScanLabelHandler extends Handler{
 	private static UfhAdapter adapter;
 	private static List<BaseModel> alModel;
 	private static ListView listView;
-	private static int idx=0;
 
 	public ScanLabelHandler(Activity activity){
 		super(activity.getMainLooper());
@@ -88,24 +87,18 @@ public class ScanLabelHandler extends Handler{
 				}
 				break;
 			case Scan6B:
-				((Button)(activity.findViewById(R.id.buttonScanLabel6B))).setText(activity.getString(R.string.Button_Scanlabel_Stop_Text));
-				(activity.findViewById(R.id.buttonScanLabel6C)).setEnabled(true);
-				for(int i=10;i<40;i++){
-					Ufh ufh=new Ufh("UFH"+i);
-					adapter.addItem(ufh);
-					int idx=adapter.getPosition(ufh);
-					listView.smoothScrollToPosition(idx);
-				}
-				break;
 			case Scan6C:
-				((Button)(activity.findViewById(R.id.buttonScanLabel6C))).setText(activity.getString(R.string.Button_Scanlabel_Stop_Text));
-				(activity.findViewById(R.id.buttonScanLabel6B)).setEnabled(true);
 				try{
-					String strLabel=bundle.getString("OptRtnStr");
-					Ufh ufh=new Ufh(strLabel);
-					adapter.addItem(ufh);
-					int i=adapter.getPosition(ufh);
-					listView.smoothScrollToPosition(i);
+					String[] aStrLabel=bundle.getStringArray("OptRtnStrArr");
+					for(String strLabel : aStrLabel){
+						if(strLabel.trim().length()==0){
+							continue;
+						}
+						Ufh ufh=new Ufh(strLabel);
+						adapter.addItem(ufh);
+						int i=adapter.getPosition(ufh);
+						listView.smoothScrollToPosition(i);
+					}
 				}catch(Exception ex){
 					ex.printStackTrace();
 				}

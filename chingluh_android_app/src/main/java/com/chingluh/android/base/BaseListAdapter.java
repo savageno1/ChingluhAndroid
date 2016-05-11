@@ -43,6 +43,8 @@ public abstract class BaseListAdapter extends BaseAdapter{
 
 	public abstract void addItem(BaseModel model);
 
+	public abstract void clearItem();
+
 	public int getPosition(BaseModel model){
 		return alModel.indexOf(model);
 	}

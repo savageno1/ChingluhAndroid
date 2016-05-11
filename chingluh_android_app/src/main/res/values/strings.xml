@@ -41,6 +41,8 @@
 	<string name="TextView_ScanLabel_DMax">频率止:</string>
 	<string name="TextView_ScanLabel_Power">功率:</string>
 	<string name="TextView_ScanLabel_Time">扫描次数:</string>
+	<string name="SoundPool_Source_Path">/etc/Scan_new.ogg</string>
+	<string name="Button_Scanlabel_Clear_Text">清空</string>
 	<string-array name="Spinner_Items_Frequencies">
 		<item>902.75 MHz</item>
 		<item>903.25 MHz</item>
