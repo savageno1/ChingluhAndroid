@@ -74,7 +74,7 @@ public class ScanLabelScanThread extends BaseThread{
 						message.setData(bundle);
 						handler.sendMessage(message);
 					}
-				},0,100);
+				},0,50);
 			}else{//停止感应
 				Cancel();
 			}

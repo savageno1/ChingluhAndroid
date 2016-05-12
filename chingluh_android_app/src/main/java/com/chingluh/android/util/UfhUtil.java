@@ -349,7 +349,7 @@ public class UfhUtil{
 		public static String[] Scan6C(){
 			int result=uhf.EPCC1G2_ScanEPC((byte)0x04,(byte)0x00);
 			if(result==0){
-				SoundFlag=true;
+				//				SoundFlag=true; //Edit by Ray:只有条码编号以0000结尾才提示
 				Scan6CNum=uhf.EPCC1G2_Inventory_POUcharTagNum();
 				Scan6CData=uhf.EPCC1G2_Inventory_pOUcharUIDList();
 				//int readlen=uhf.EPCC1G2_Inventory_POUcharReadlen();
@@ -376,6 +376,14 @@ public class UfhUtil{
 					epcBytes.put(lable[i],epc);
 					j=j+k+2;
 				}
+				//Edit by Ray:只有条码编号以0000结尾才提示
+				for(String strLabel : lable){
+					if(strLabel.endsWith("0000")){
+//						soundThread.execute(soundRun);
+						SoundFlag=true;
+						break;
+					}
+				}
 				return lable;
 			}
 			SoundFlag=false;
@@ -401,7 +409,7 @@ public class UfhUtil{
 				//				Scan6BNum=uhf.EPCC1G2_Inventory_POUcharTagNum();
 				//			    Scan6BData=uhf.EPCC1G2_Inventory_pOUcharUIDList();
 				/*int flag=(int)Scan6BData[0];
-			    for(int i=0;i<Scan6BNum;i++)
+				for(int i=0;i<Scan6BNum;i++)
 			    {
 
 			    	for(int j=0;j<flag-1;j++)

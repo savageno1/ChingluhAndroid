@@ -57,11 +57,11 @@ public class ScanLabelActivity extends BaseActivityWithoutLogin{
 					bScaning=!bScaning;
 					if(bScaning){
 						((Button)findViewById(R.id.buttonScanLabel6B)).setText(getString(R.string.Button_Scanlabel_Stop_Text));
-						findViewById(R.id.buttonScanLabelSet).setEnabled(false);
+						//						findViewById(R.id.buttonScanLabelSet).setEnabled(false);
 						findViewById(R.id.buttonScanLabel6C).setEnabled(false);
 					}else{
 						((Button)findViewById(R.id.buttonScanLabel6B)).setText(getString(R.string.Button_Scanlabel_6B_Text));
-						findViewById(R.id.buttonScanLabelSet).setEnabled(true);
+						//						findViewById(R.id.buttonScanLabelSet).setEnabled(true);
 						findViewById(R.id.buttonScanLabel6C).setEnabled(true);
 					}
 					break;
@@ -77,12 +77,12 @@ public class ScanLabelActivity extends BaseActivityWithoutLogin{
 					bScaning=!bScaning;
 					if(bScaning){
 						((Button)findViewById(R.id.buttonScanLabel6C)).setText(getString(R.string.Button_Scanlabel_Stop_Text));
-						findViewById(R.id.buttonScanLabelSet).setEnabled(false);
-						findViewById(R.id.buttonScanLabel6B).setEnabled(false);
+						//						findViewById(R.id.buttonScanLabelSet).setEnabled(false);
+						//						findViewById(R.id.buttonScanLabel6B).setEnabled(false);
 					}else{
 						((Button)findViewById(R.id.buttonScanLabel6C)).setText(getString(R.string.Button_Scanlabel_6C_Text));
-						findViewById(R.id.buttonScanLabelSet).setEnabled(true);
-						findViewById(R.id.buttonScanLabel6B).setEnabled(true);
+						//						findViewById(R.id.buttonScanLabelSet).setEnabled(true);
+						//						findViewById(R.id.buttonScanLabel6B).setEnabled(true);
 					}
 					break;
 			}
