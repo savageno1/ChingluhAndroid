@@ -5,12 +5,98 @@
 	android:orientation="vertical"
 	android:weightSum="1">
 
+	<TableRow
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/TextView_ScanLabel_Col_Code"
+				android:id="@+id/textViewScanLabelColCode"
+				android:textSize="16sp"
+				android:gravity="center"
+				android:layout_weight="3" />
+
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/TextView_ScanLabel_Col_Qty"
+				android:id="@+id/textViewScanLabelColQty"
+				android:textSize="16sp"
+				android:gravity="end|center_horizontal"
+				android:layout_weight="7" />
+		</LinearLayout>
+	</TableRow>
+
 	<ListView
 		android:id="@+id/listView"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:layout_margin="3dip"
 		android:layout_weight="1" />
+
+	<TableRow
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" >
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/TextView_ScanLabel_Label_Unlocked_Text"
+				android:id="@+id/textViewScanLabelUnlockedText"
+				android:layout_weight="3"
+				android:textSize="16sp"
+				android:gravity="end|center_horizontal" />
+
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="0"
+				android:id="@+id/textViewScanLabelUnlockedQty"
+				android:layout_weight="7"
+				android:textSize="16sp"
+				android:gravity="start|center_horizontal" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/TextView_ScanLabel_Label_Locked_Text"
+				android:id="@+id/textViewScanLabelLockedText"
+				android:layout_weight="3"
+				android:textSize="16sp"
+				android:gravity="end|center_horizontal"
+				android:textColor="@color/Chingluh_Read" />
+
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="0"
+				android:id="@+id/textViewScanLabelLockedQty"
+				android:layout_weight="7"
+				android:textSize="16sp"
+				android:gravity="start|center_horizontal"
+				android:textColor="@color/Chingluh_Read" />
+		</LinearLayout>
+	</TableRow>
 
 	<TableRow
 		android:layout_width="fill_parent"
@@ -52,13 +138,13 @@
 		android:layout_height="wrap_content">
 
 		<Button
-			android:id="@+id/buttonScanLabel6B"
+			android:id="@+id/buttonScanLabelViewSet"
 			style="@style/Chingluh_Style_Button_Small"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="3dip"
 			android:layout_weight="1"
-			android:text="@string/Button_Scanlabel_6B_Text"
+			android:text="@string/Button_Scanlabel_ViewSet_On"
 			android:textAppearance="?android:attr/textAppearanceLarge" />
 
 		<Button

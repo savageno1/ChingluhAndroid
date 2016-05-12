@@ -23,6 +23,7 @@ public class ScanLabelScanThread extends BaseThread{
 	public static Timer timer;
 	private static boolean bCancel=false;
 	private static Button button;
+	private static boolean bViewSet=true;
 
 	public ScanLabelScanThread(Activity activity,Button button){
 		super(activity,new ScanLabelHandler(activity));
@@ -35,6 +36,18 @@ public class ScanLabelScanThread extends BaseThread{
 
 	public static void Off(){
 		bCancel=true;
+	}
+
+	public static void ViewOn(){
+		bViewSet=true;
+	}
+
+	public static void ViewOff(){
+		bViewSet=false;
+	}
+
+	public static boolean getViewSet(){
+		return bViewSet;
 	}
 
 	@Override
@@ -53,9 +66,6 @@ public class ScanLabelScanThread extends BaseThread{
 						}
 						String[] aStrLabel=null;
 						switch(button.getId()){
-							case R.id.buttonScanLabel6B:
-								aStrLabel=UfhUtil.UhfGetData.Scan6B();
-								break;
 							case R.id.buttonScanLabel6C:
 								aStrLabel=UfhUtil.UhfGetData.Scan6C();
 								break;
@@ -63,16 +73,18 @@ public class ScanLabelScanThread extends BaseThread{
 						if(aStrLabel==null){
 							return;
 						}
-						Message message=handler.obtainMessage();
-						Bundle bundle=new Bundle();
-						try{
-							bundle.putSerializable("OptType",Scan6C);
-							bundle.putStringArray("OptRtnStrArr",aStrLabel);
-						}catch(Exception exception){
-							bundle.putString(AppConfig.STR_EXCEPTION,exception.getMessage());
+						if(bViewSet){
+							Message message=handler.obtainMessage();
+							Bundle bundle=new Bundle();
+							try{
+								bundle.putSerializable("OptType",Scan6C);
+								bundle.putStringArray("OptRtnStrArr",aStrLabel);
+							}catch(Exception exception){
+								bundle.putString(AppConfig.STR_EXCEPTION,exception.getMessage());
+							}
+							message.setData(bundle);
+							handler.sendMessage(message);
 						}
-						message.setData(bundle);
-						handler.sendMessage(message);
 					}
 				},0,50);
 			}else{//停止感应

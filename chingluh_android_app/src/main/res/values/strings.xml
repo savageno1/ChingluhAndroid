@@ -36,6 +36,8 @@
 	<string name="TabHost_Set_Label">设置</string>
 	<string name="Button_Scanlabel_6B_Text">6B</string>
 	<string name="Button_Scanlabel_6C_Text">6C</string>
+	<string name="TextView_ScanLabel_Label_Locked_Text">未解锁条码:</string>
+	<string name="TextView_ScanLabel_Label_Unlocked_Text">已解锁条码:</string>
 	<string name="TextView_ScanLabel_Version">版本:</string>
 	<string name="TextView_ScanLabel_DMin">频率起:</string>
 	<string name="TextView_ScanLabel_DMax">频率止:</string>
@@ -43,6 +45,10 @@
 	<string name="TextView_ScanLabel_Time">扫描次数:</string>
 	<string name="SoundPool_Source_Path">/etc/Scan_new.ogg</string>
 	<string name="Button_Scanlabel_Clear_Text">清空</string>
+	<string name="Button_Scanlabel_ViewSet_On">显示</string>
+	<string name="Button_Scanlabel_ViewSet_Off">不显示</string>
+	<string name="TextView_ScanLabel_Col_Qty">次数</string>
+	<string name="TextView_ScanLabel_Col_Code">条码号</string>
 	<string-array name="Spinner_Items_Frequencies">
 		<item>902.75 MHz</item>
 		<item>903.25 MHz</item>

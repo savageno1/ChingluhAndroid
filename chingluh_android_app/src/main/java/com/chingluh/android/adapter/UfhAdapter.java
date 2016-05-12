@@ -1,6 +1,8 @@
 package com.chingluh.android.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -11,6 +13,7 @@ import com.chingluh.android.base.BaseModel;
 import com.chingluh.android.data.holder.UfhViewHolder;
 import com.chingluh.android.model.Ufh;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -18,8 +21,16 @@ import java.util.List;
  * Created by Ray on 2016/05/10.
  */
 public class UfhAdapter extends BaseListAdapter{
-	public UfhAdapter(Context context,List<BaseModel> alModel){
+	private Activity activity;
+	private List<String> alStrLocked;
+	private List<String> alStrUnlock;
+
+	public UfhAdapter(Context context,List<BaseModel> alModel,Activity activity){
 		super(context,alModel);
+		this.activity=activity;
+		//
+		alStrLocked=new ArrayList<String>();
+		alStrUnlock=new ArrayList<String>();
 	}
 
 	@Override
@@ -50,6 +61,13 @@ public class UfhAdapter extends BaseListAdapter{
 				textViewUfhQty.setText(String.valueOf(ufh.getUfhQty()));
 				textViewUfhCode.setVisibility(View.VISIBLE);
 				textViewUfhQty.setVisibility(View.VISIBLE);
+				if(ufh.getUfhCode().endsWith("0000")){
+					textViewUfhCode.setTextColor(ContextCompat.getColor(activity,R.color.Chingluh_Read));
+					textViewUfhQty.setTextColor(ContextCompat.getColor(activity,R.color.Chingluh_Read));
+				}else{
+					textViewUfhCode.setTextColor(ContextCompat.getColor(activity,R.color.Chingluh_Blue));
+					textViewUfhQty.setTextColor(ContextCompat.getColor(activity,R.color.Chingluh_Blue));
+				}
 			}
 		}
 		return convertView;
@@ -65,12 +83,25 @@ public class UfhAdapter extends BaseListAdapter{
 			int idx=alModel.indexOf(ufh);
 			ufh=(Ufh)(alModel.get(idx));
 			ufh.addUfhQty(1);
+			if(ufh.getUfhCode().endsWith("0000")){
+				if(!alStrLocked.contains(ufh.getUfhCode())){
+					alStrLocked.add(ufh.getUfhCode());
+					((TextView)activity.findViewById(R.id.textViewScanLabelLockedQty)).setText(String.valueOf(alStrLocked.size()));
+				}
+			}else{
+				if(!alStrUnlock.contains(ufh.getUfhCode())){
+					alStrUnlock.add(ufh.getUfhCode());
+					((TextView)activity.findViewById(R.id.textViewScanLabelUnlockedQty)).setText(String.valueOf(alStrUnlock.size()));
+				}
+			}
 		}
 		notifyDataSetChanged();
 	}
 
 	@Override
 	public void clearItem(){
+		alStrLocked.clear();
+		alStrUnlock.clear();
 		alModel.clear();
 		notifyDataSetChanged();
 	}
