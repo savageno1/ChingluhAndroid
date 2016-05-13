@@ -40,7 +40,7 @@ public class LogoActivity extends Activity{
 			//logo渐变
 			ImageView imageViewLogo=(ImageView)findViewById(R.id.imageViewLogo);
 			ObjectAnimator objectAnimator=ObjectAnimator.ofFloat(imageViewLogo,"alpha",0f,1f);
-			objectAnimator.setDuration(500);
+			objectAnimator.setDuration(1000);
 			objectAnimator.start();
 		}catch(Exception e){
 			e.printStackTrace();
