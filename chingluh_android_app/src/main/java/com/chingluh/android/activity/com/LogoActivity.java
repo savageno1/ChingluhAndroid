@@ -19,7 +19,6 @@ public class LogoActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_logo);
-		//float scale=getResources().getDisplayMetrics().density;
 		try{
 			//
 			//线程启动
@@ -41,7 +40,7 @@ public class LogoActivity extends Activity{
 			//logo渐变
 			ImageView imageViewLogo=(ImageView)findViewById(R.id.imageViewLogo);
 			ObjectAnimator objectAnimator=ObjectAnimator.ofFloat(imageViewLogo,"alpha",0f,1f);
-			objectAnimator.setDuration(300);
+			objectAnimator.setDuration(500);
 			objectAnimator.start();
 		}catch(Exception e){
 			e.printStackTrace();
