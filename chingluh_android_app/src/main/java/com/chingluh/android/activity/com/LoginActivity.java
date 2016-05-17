@@ -16,6 +16,7 @@ import android.widget.Button;
 import com.chingluh.android.R;
 import com.chingluh.android.thread.InitThread;
 import com.chingluh.android.thread.LoginThread;
+import com.chingluh.android.thread.UpdateCheckThread;
 
 /**
  * @author Ray
@@ -70,6 +71,8 @@ public class LoginActivity extends Activity{
 		buttonLocal.setOnClickListener(this.onClickListener);
 		//新线程加载初始化
 		new Thread(new InitThread(LoginActivity.this)).start();
+		//检查更新
+		new Thread(new UpdateCheckThread(LoginActivity.this)).start();
 	}
 
 	@Override
