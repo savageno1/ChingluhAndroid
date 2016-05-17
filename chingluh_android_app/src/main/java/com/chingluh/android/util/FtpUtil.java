@@ -27,6 +27,7 @@ public class FtpUtil{
 		}
 		return ftpUtilInstance;
 	}
+
 	public boolean initFTPSetting(String url,int port,String userName,String userPassword){
 		this.url=url;
 		this.port=port;
@@ -39,15 +40,24 @@ public class FtpUtil{
 			reply=ftpClient.getReplyCode();
 			if(!(FTPReply.isPositiveCompletion(reply))){
 				ftpClient.disconnect();
-				return  false;
+				return false;
 			}
-			return  true;
+			return true;
 		}catch(SocketException exception){
 			exception.printStackTrace();
-			return true;
+			return false;
 		}catch(IOException exception){
 			exception.printStackTrace();
-			return  true;
+			return false;
+		}
+	}
+
+	public boolean changePath(String path){
+		try{
+			return true;
+		}catch(Exception exception){
+			exception.printStackTrace();
+			return false;
 		}
 	}
 }
