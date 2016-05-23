@@ -1,6 +1,10 @@
 package com.chingluh.android.util;
 
+import com.chingluh.android.app.AppData;
+import com.chingluh.android.config.AppConfig;
+
 import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
 
 import java.io.IOException;
@@ -36,6 +40,7 @@ public class FtpUtil{
 		int reply;
 		try{
 			ftpClient.connect(url,port);
+			ftpClient.enterLocalPassiveMode();
 			ftpClient.login(userName,userPassword);
 			reply=ftpClient.getReplyCode();
 			if(!(FTPReply.isPositiveCompletion(reply))){
@@ -54,10 +59,33 @@ public class FtpUtil{
 
 	public boolean changePath(String path){
 		try{
+			if(!ftpClient.changeWorkingDirectory(path)){
+				return false;
+			}
 			return true;
 		}catch(Exception exception){
 			exception.printStackTrace();
 			return false;
 		}
+	}
+
+	public FTPFile[] getFiles(){
+		FTPFile[] aFTPFile={};
+		try{
+			aFTPFile=ftpClient.listFiles();
+		}catch(Exception exception){
+			exception.printStackTrace();
+		}
+		return aFTPFile;
+	}
+
+	public String[] getFileNames(){
+		String[] aFileName={};
+		try{
+			aFileName=ftpClient.listNames();
+		}catch(Exception exception){
+			exception.printStackTrace();
+		}
+		return aFileName;
 	}
 }

@@ -1,6 +1,8 @@
 <resources>
 	<string name="app_name">清禄集团</string>
-	<string name="AlertDialog_Exit_Title">是否要退出</string>
+	<string name="AlertDialog_ApkNew_Title">发现新版本</string>
+	<string name="AlertDialog_ApkNew_Application_Message">是否要更新？</string>
+	<string name="AlertDialog_Exit_Title">是否要退出？</string>
 	<string name="AlertDialog_Exit_Application_Message">确定要退出系统吗？</string>
 	<string name="AlertDialog_Exit_To_Login_Message">确定要登出系统并退出吗？</string>
 	<string name="AlertDialog_Exit_To_LocalMenu_Message">确定要返回离线主菜单吗？</string>
@@ -20,6 +22,8 @@
 	<string name="MessageUtil_Message_CheckingIn">正在登录系统</string>
 	<string name="MessageUtil_Message_CheckInFail">登录失败</string>
 	<string name="MessageUtil_Message_FtpConnectionFail">FTP连接失败</string>
+	<string name="MessageUtil_Message_Apk_Inexist">Apk文件不存在</string>
+	<string name="MessageUtil_Message_Apk_New">发现新版本程序。是否需要更新?</string>
 	<string name="MessageUtil_Message_Login_Welcome">欢迎登陆</string>
 	<string name="MessageUtil_Message_Ufh_Open_Fail">Ufh 打开失败</string>
 	<string name="MessageUtil_Message_Ufh_Opened">Ufh 成功打开</string>
