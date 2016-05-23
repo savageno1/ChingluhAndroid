@@ -7,8 +7,9 @@ public class AppConfig {
 	public static final String FtpUserId="ora";
 	public static final String FtpPassword="ora084365";
 	public static final String ApkFilePath="androidapk";
-	public static final  String ApkFileNamePrefix="chingluh_android_app";
-	public static final  String ApkFileNamePrefixDebug="chingluh_android_app-debug";
+	public static final  String ApkFileNamePrefix="com.chingluh.android";
+	public static final  String ApkFileNamePrefixDebug="com.chingluh.android-debug";
 	public static final String ApkFileNameSeparator="_v";
+	public static final String ApkFileLocalPath="/sdcard0/chingluh";
 
 }

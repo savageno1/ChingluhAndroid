@@ -10,10 +10,30 @@ import android.widget.Toast;
 
 import com.chingluh.android.R;
 import com.chingluh.android.app.AppData;
+import com.chingluh.android.thread.UpdateThread;
 import com.chingluh.android.util.MessageUtil;
+
+import java.io.File;
 
 public class UpdateCheckHandler extends Handler{
 	private Activity activity;
+	private File file;
+	//按钮监听器
+	private DialogInterface.OnClickListener onClickListenerExit=new DialogInterface.OnClickListener(){
+		@Override
+		public void onClick(DialogInterface dialog,int which){
+			switch(which){
+				case DialogInterface.BUTTON_POSITIVE://确认按钮
+					//更新程式
+					new Thread(new UpdateThread(activity,file)).start();
+					break;
+				case DialogInterface.BUTTON_NEGATIVE://取消按钮
+					break;
+				default:
+					break;
+			}
+		}
+	};
 
 	public UpdateCheckHandler(Activity activity){
 		super(activity.getMainLooper());
@@ -28,6 +48,7 @@ public class UpdateCheckHandler extends Handler{
 			return;
 		}
 		Integer iNewVersion=bundle.getInt("NEW_VERSION");
+		file=new File(bundle.getString("NEW_VERSION_FILE"));
 		if(iNewVersion!=null){
 			MessageUtil.showMessage(this.activity,activity.getString(R.string.MessageUtil_Message_Apk_New),Toast.LENGTH_LONG);
 			//创建退出对话框
@@ -43,18 +64,4 @@ public class UpdateCheckHandler extends Handler{
 			alertDialogExit.show();
 		}
 	}
-	//按钮监听器
-	private DialogInterface.OnClickListener onClickListenerExit=new DialogInterface.OnClickListener(){
-		@Override
-		public void onClick(DialogInterface dialog,int which){
-			switch(which){
-				case DialogInterface.BUTTON_POSITIVE://确认按钮
-					break;
-				case DialogInterface.BUTTON_NEGATIVE://取消按钮
-					break;
-				default:
-					break;
-			}
-		}
-	};
 }

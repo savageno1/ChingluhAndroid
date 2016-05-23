@@ -14,6 +14,8 @@ import com.chingluh.android.util.FtpUtil;
 
 import org.apache.commons.net.ftp.FTPFile;
 
+import java.io.File;
+
 /**
  * Created by Ray on 2016/05/17.
  * Check Update
@@ -27,8 +29,8 @@ public class UpdateCheckThread extends BaseThread{
 	public void run(){
 		Message message=this.handler.obtainMessage();
 		Bundle bundle=new Bundle();
+		FtpUtil ftpUtil=FtpUtil.getInstance();
 		try{
-			FtpUtil ftpUtil=FtpUtil.getInstance();
 			if(!ftpUtil.initFTPSetting(AppConfig.FtpIpAddress,AppConfig.FtpPort,AppConfig.FtpUserId,AppConfig.FtpPassword)){
 				throw new Exception(activity.getString(R.string.MessageUtil_Message_FtpConnectionFail));
 			}
@@ -40,6 +42,8 @@ public class UpdateCheckThread extends BaseThread{
 				throw new Exception(activity.getString(R.string.MessageUtil_Message_Apk_Inexist));
 			}
 			int iFileVersionMax=0;
+			String strFileNameMax="";
+			long lFileSizeMax=0;
 			for(FTPFile ftpFile : aFTPFile){
 				String strFileName=ftpFile.getName();
 				if(strFileName.startsWith(AppConfig.ApkFileNamePrefix)){
@@ -50,6 +54,8 @@ public class UpdateCheckThread extends BaseThread{
 							int iFileVersionCur=Integer.valueOf(aStrName[1]);
 							if(iFileVersionCur>iFileVersionMax){
 								iFileVersionMax=iFileVersionCur;
+								strFileNameMax=strApkName;
+								lFileSizeMax=ftpFile.getSize();
 							}
 						}catch(Exception exception){
 							exception.printStackTrace();
@@ -63,9 +69,23 @@ public class UpdateCheckThread extends BaseThread{
 			int iFileVersionSys=packageInfo.versionCode;
 			if(iFileVersionMax>iFileVersionSys){
 				bundle.putInt("NEW_VERSION",iFileVersionMax);
+				bundle.putString("NEW_VERSION_FILE",strFileNameMax);
+				//
+				File file=new File(AppConfig.ApkFileLocalPath+"/"+strFileNameMax);
+//				file.createNewFile();
+				//				if(file.exists()||file.length()<lFileSizeMax){
+				//					file.delete();
+				//				}
+				//				if(!file.exists()){
+				if(!ftpUtil.download(strFileNameMax,file)){
+					throw new Exception(activity.getString(R.string.MessageUtil_Message_FtpConnectionFail));
+				}
 			}
+			//			}
 		}catch(Exception exception){
 			bundle.putString(AppConfig.STR_EXCEPTION,exception.getMessage());
+		}finally{
+			ftpUtil.close();
 		}
 		message.setData(bundle);
 		this.handler.sendMessage(message);
