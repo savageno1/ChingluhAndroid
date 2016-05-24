@@ -21,7 +21,8 @@
 	<string name="MessageUtil_Message_InitSystemData">正在初始化系统信息</string>
 	<string name="MessageUtil_Message_CheckingIn">正在登录系统</string>
 	<string name="MessageUtil_Message_CheckInFail">登录失败</string>
-	<string name="MessageUtil_Message_FtpConnectionFail">FTP连接失败</string>
+	<string name="MessageUtil_Message_Ftp_Connection_Fail">FTP连接失败</string>
+	<string name="MessageUtil_Message_Ftp_Download_Fail">FTP连接失败</string>
 	<string name="MessageUtil_Message_Apk_Inexist">Apk文件不存在</string>
 	<string name="MessageUtil_Message_Apk_New">发现新版本程序。是否需要更新?</string>
 	<string name="MessageUtil_Message_Login_Welcome">欢迎登陆</string>
@@ -54,6 +55,8 @@
 	<string name="Button_Scanlabel_ViewSet_Off">不显示</string>
 	<string name="TextView_ScanLabel_Col_Qty">次数</string>
 	<string name="TextView_ScanLabel_Col_Code">条码号</string>
+	<string name="ProgressDialog_Ftp_Download_Title">正在下载</string>
+	<string name="ProgressDialog_Ftp_Download_Text">已下载</string>
 	<string-array name="Spinner_Items_Frequencies">
 		<item>902.75 MHz</item>
 		<item>903.25 MHz</item>

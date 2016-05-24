@@ -10,6 +10,6 @@ public class AppConfig {
 	public static final  String ApkFileNamePrefix="com.chingluh.android";
 	public static final  String ApkFileNamePrefixDebug="com.chingluh.android-debug";
 	public static final String ApkFileNameSeparator="_v";
-	public static final String ApkFileLocalPath="/sdcard0/chingluh";
+	public static final String ApkFileLocalPath="/sdcard/chingluh";
 
 }
