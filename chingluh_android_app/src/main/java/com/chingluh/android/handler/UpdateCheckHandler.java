@@ -45,6 +45,9 @@ public class UpdateCheckHandler extends Handler{
 								progressDialog.cancel();
 								cancel();
 							}
+							if(!progressDialog.isShowing()){
+								cancel();
+							}
 							progressDialog.setProgress((int)(file.length()*100/lFileSize));
 						}
 					},0,100);
