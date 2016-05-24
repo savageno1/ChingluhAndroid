@@ -1,6 +1,6 @@
 <resources>
 	<string name="app_name">清禄集团</string>
-	<string name="AlertDialog_ApkNew_Title">发现新版本</string>
+	<string name="AlertDialog_ApkNew_Title">发现新版本，版本号：</string>
 	<string name="AlertDialog_ApkNew_Application_Message">是否要更新？</string>
 	<string name="AlertDialog_Exit_Title">是否要退出？</string>
 	<string name="AlertDialog_Exit_Application_Message">确定要退出系统吗？</string>
@@ -57,6 +57,7 @@
 	<string name="TextView_ScanLabel_Col_Code">条码号</string>
 	<string name="ProgressDialog_Ftp_Download_Title">正在下载</string>
 	<string name="ProgressDialog_Ftp_Download_Text">已下载</string>
+	<string name="TextView_Version_Text">版本号：</string>
 	<string-array name="Spinner_Items_Frequencies">
 		<item>902.75 MHz</item>
 		<item>903.25 MHz</item>

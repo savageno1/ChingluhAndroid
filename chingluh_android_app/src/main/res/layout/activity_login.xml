@@ -99,5 +99,15 @@
 			android:background="@drawable/button_background"
 			android:text="@string/Button_Local_Text"
 			android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<TextView
+			android:id="@+id/textViewVersion"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:gravity="center"
+			android:text="@string/TextView_Version_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:textSize="15sp" />
 	</LinearLayout>
 </ScrollView>

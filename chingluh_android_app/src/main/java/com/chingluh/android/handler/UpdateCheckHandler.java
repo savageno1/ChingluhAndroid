@@ -81,7 +81,7 @@ public class UpdateCheckHandler extends Handler{
 			//创建退出对话框
 			AlertDialog alertDialogExit=new AlertDialog.Builder(activity).create();
 			//设置对话框标题
-			alertDialogExit.setTitle(activity.getString(R.string.AlertDialog_ApkNew_Title));
+			alertDialogExit.setTitle(activity.getString(R.string.AlertDialog_ApkNew_Title)+String.valueOf(iNewVersion));
 			//设置对话框消息
 			alertDialogExit.setMessage(activity.getString(R.string.AlertDialog_ApkNew_Application_Message));
 			//添加按钮并注册监听

@@ -7,16 +7,23 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chingluh.android.R;
 import com.chingluh.android.thread.InitThread;
 import com.chingluh.android.thread.LoginThread;
 import com.chingluh.android.thread.UpdateCheckThread;
+import com.chingluh.android.util.MessageUtil;
+
+import org.w3c.dom.Text;
 
 /**
  * @author Ray
@@ -69,6 +76,15 @@ public class LoginActivity extends Activity{
 		buttonQrLogin.setOnClickListener(this.onClickListener);
 		buttonLogin.setOnClickListener(this.onClickListener);
 		buttonLocal.setOnClickListener(this.onClickListener);
+		//显示当前版本号
+		try{
+			PackageManager packageManager=this.getPackageManager();
+			PackageInfo packageInfo=packageManager.getPackageInfo(this.getPackageName(),0);
+			((TextView)findViewById(R.id.textViewVersion)).setText(getString(R.string.TextView_Version_Text)+packageInfo.versionName);
+		}catch(Exception e){
+			MessageUtil.showMessage(this,e.getMessage(),Toast.LENGTH_LONG);
+		}
+
 		//新线程加载初始化
 		new Thread(new InitThread(LoginActivity.this)).start();
 		//检查更新
