@@ -14,8 +14,6 @@ import com.chingluh.android.util.FtpUtil;
 
 import org.apache.commons.net.ftp.FTPFile;
 
-import java.io.File;
-
 /**
  * Created by Ray on 2016/05/17.
  * Check Update

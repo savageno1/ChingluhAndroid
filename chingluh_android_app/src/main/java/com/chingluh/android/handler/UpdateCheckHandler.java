@@ -78,7 +78,6 @@ public class UpdateCheckHandler extends Handler{
 		strFileName=bundle.getString("NEW_VERSION_FILE");
 		lFileSize=bundle.getLong("NEW_VERSION_FILE_SIZE");
 		if(iNewVersion>0){
-			MessageUtil.showMessage(this.activity,activity.getString(R.string.MessageUtil_Message_Apk_New),Toast.LENGTH_LONG);
 			//创建退出对话框
 			AlertDialog alertDialogExit=new AlertDialog.Builder(activity).create();
 			//设置对话框标题
