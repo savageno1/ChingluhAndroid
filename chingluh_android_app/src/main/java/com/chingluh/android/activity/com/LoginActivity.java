@@ -14,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +23,7 @@ import com.chingluh.android.thread.InitThread;
 import com.chingluh.android.thread.LoginThread;
 import com.chingluh.android.thread.UpdateCheckThread;
 import com.chingluh.android.util.MessageUtil;
-
-import org.w3c.dom.Text;
+import com.zbar.lib.CaptureActivity;
 
 /**
  * @author Ray
@@ -37,7 +37,8 @@ public class LoginActivity extends Activity{
 		public void onClick(View v){
 			switch(v.getId()){
 				case R.id.buttonQrLogin:
-					new Thread(new LoginThread(LoginActivity.this)).start();
+					Intent intent=new Intent(LoginActivity.this,CaptureActivity.class);
+					startActivityForResult(intent,0);
 					break;
 				case R.id.buttonLogin:
 					new Thread(new LoginThread(LoginActivity.this)).start();
@@ -84,7 +85,6 @@ public class LoginActivity extends Activity{
 		}catch(Exception e){
 			MessageUtil.showMessage(this,e.getMessage(),Toast.LENGTH_LONG);
 		}
-
 		//新线程加载初始化
 		new Thread(new InitThread(LoginActivity.this)).start();
 		//检查更新
@@ -107,5 +107,15 @@ public class LoginActivity extends Activity{
 			alertDialogExit.show();
 		}
 		return false;
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode,int resultCode,Intent data){
+		super.onActivityResult(requestCode,resultCode,data);
+		if(resultCode==RESULT_OK){
+			Bundle bundle=data.getExtras();
+			String scanResult=bundle.getString("result");
+			((EditText)findViewById(R.id.editTextUserId)).setText(scanResult);
+		}
 	}
 }
