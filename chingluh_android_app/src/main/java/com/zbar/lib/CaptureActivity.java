@@ -1,6 +1,7 @@
 package com.zbar.lib;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Point;
 import android.media.AudioManager;
@@ -234,8 +235,18 @@ public class CaptureActivity extends Activity implements Callback{
 		//			// TODO Auto-generated catch block
 		//			e.printStackTrace();
 		//		}
-		Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
-		// 杩炵画鎵弿锛屼笉鍙戦�姝ゆ秷鎭壂鎻忎竴娆＄粨鏉熷悗灏变笉鑳藉啀娆℃壂鎻�		// handler.sendEmptyMessage(R.id.restart_preview);
+		//Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
+		//handler.sendEmptyMessage(R.id.restart_preview);
+		if(!result.equals("")){
+			Intent resultIntent=new Intent();
+			Bundle bundle=new Bundle();
+			bundle.putString("result",result);
+			resultIntent.putExtras(bundle);
+			this.setResult(RESULT_OK,resultIntent);
+		}else{
+			Toast.makeText(CaptureActivity.this,"Scan failed!",Toast.LENGTH_SHORT).show();
+		}
+		CaptureActivity.this.finish();
 	}
 
 	private void playBeepSoundAndVibrate(){
