@@ -21,7 +21,7 @@ android {
     }
     sourceSets {
         main {
-            jniLibs.srcDirs = ['jni']
+            jniLibs.srcDirs 'src/main/jni'
         }
     }
     android.applicationVariants.all {
