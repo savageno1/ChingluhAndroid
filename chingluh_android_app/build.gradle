@@ -37,6 +37,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:support-v4:23.3.0'
+    //compile 'me.dm7.barcodescanner:zbar:1.8.4'
     compile files('C:/Android/Projects/ChingluhAndroid/libs/UhfLib.jar')
     compile files('C:/Android/Projects/ChingluhAndroid/libs/commons-net-3.5.jar')
 }
