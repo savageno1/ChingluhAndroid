@@ -19,7 +19,8 @@
 			<ImageView
 				android:layout_width="160dip"
 				android:layout_height="120dip"
-				android:src="@drawable/chingluh_logo_small" />
+				android:src="@drawable/chingluh_logo_small"
+				android:contentDescription="@string/Image_ContentDescription_Logo" />
 		</LinearLayout>
 
 		<TextView
