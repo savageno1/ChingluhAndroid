@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.chingluh.android.R;
+import com.chingluh.android.thread.UpdateCheckThread;
 
 /**
  * @author Ray
@@ -23,7 +24,7 @@ public class LogoActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_logo);
 		try{
-			//
+			//动画
 			//线程启动
 			new Thread(new Runnable(){
 				@Override

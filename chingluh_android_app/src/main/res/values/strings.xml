@@ -15,7 +15,9 @@
 	<string name="TextView_Password_Text">密码</string>
 	<string name="TextView_Local">离线使用</string>
 	<string name="Button_Login_Text">登录</string>
+	<string name="Button_Logout_Text">登出</string>
 	<string name="Button_Local_Text">离线使用</string>
+	<string name="Button_Online_Text">在线使用</string>
 	<string name="Button_ScanLabel_Text">条码扫描</string>
 	<string name="TextView_Company_Text">公司</string>
 	<string name="MessageUtil_Message_InitSystemData">正在初始化系统信息</string>
@@ -30,7 +32,7 @@
 	<string name="MessageUtil_Message_Ufh_Opened">Ufh 成功打开</string>
 	<string name="MessageUtil_Message_Ufh_Closed">Ufh 成功关闭</string>
 	<string name="MessageUtil_Message_Ufh_Close_Fail">Ufh 关闭失败</string>
-	<string name="Button_QrLogin_Text">二维码登录</string>
+	<string name="Button_QrLogin_Text">扫码</string>
 	<string name="Button_Scanlabel_Open_Text">打开</string>
 	<string name="Button_Scanlabel_Set_Text">设置</string>
 	<string name="Button_Scanlabel_Close_Text">关闭</string>

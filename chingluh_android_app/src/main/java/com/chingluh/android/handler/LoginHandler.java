@@ -8,6 +8,7 @@ import android.os.Message;
 import android.widget.Toast;
 
 import com.chingluh.android.R;
+import com.chingluh.android.activity.com.LoginActivity;
 import com.chingluh.android.activity.withlogin.MainActivity;
 import com.chingluh.android.app.AppData;
 import com.chingluh.android.util.MessageUtil;
@@ -31,7 +32,7 @@ public class LoginHandler extends Handler{
 		String strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Login_Welcome)+"  "+AppData.getUserData().getRealName()+"!";
 		MessageUtil.showMessage(this.activity,strWelcomeMsg,Toast.LENGTH_SHORT);
 		//跳转
-		Intent intent=new Intent(this.activity,MainActivity.class);
+		Intent intent=new Intent(this.activity,LoginActivity.class);
 		this.activity.startActivity(intent);
 		this.activity.finish();
 	}

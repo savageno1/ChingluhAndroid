@@ -28,7 +28,7 @@ public class NetworkUtil {
 	}
 
 	public static String getLoaclMacAddress(Activity activity) {
-		return getWifiInfo(activity).getMacAddress();
+		return getWifiInfo(activity).getMacAddress().toLowerCase();
 	}
 
 	public static String getIPAddress(boolean useIPv4) {

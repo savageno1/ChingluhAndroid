@@ -15,10 +15,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chingluh.android.R;
+import com.chingluh.android.activity.withlogin.MainActivity;
+import com.chingluh.android.app.AppData;
 import com.chingluh.android.thread.InitThread;
 import com.chingluh.android.thread.LoginThread;
 import com.chingluh.android.thread.UpdateCheckThread;
@@ -29,19 +32,32 @@ import com.zbar.lib.CaptureActivity;
  * @author Ray
  */
 public class LoginActivity extends Activity{
+	private EditText editTextUserId;//用户名
+	private EditText editTextPassword;//密码
 	private Button buttonLogin;//登陆按钮
 	private Button buttonQrLogin;//扫码登陆按钮
+	private Button buttonLogout;//登出按钮
 	private Button buttonLocal;//免登陆
+	private Button buttonOnline;//需登陆
+	private Spinner spinnerCompany;//公司别
 	private OnClickListener onClickListener=new OnClickListener(){
 		@Override
 		public void onClick(View v){
 			switch(v.getId()){
+				case R.id.buttonLogin:
+					new Thread(new LoginThread(LoginActivity.this)).start();
+					break;
 				case R.id.buttonQrLogin:
 					Intent intent=new Intent(LoginActivity.this,CaptureActivity.class);
 					startActivityForResult(intent,0);
 					break;
-				case R.id.buttonLogin:
-					new Thread(new LoginThread(LoginActivity.this)).start();
+				case R.id.buttonLogout:
+					AppData.setNullUserData();
+					onCreate(null);
+					break;
+				case R.id.buttonOnline:
+					Intent intentOnlineMenu=new Intent(LoginActivity.this,MainActivity.class);
+					startActivity(intentOnlineMenu);
 					break;
 				case R.id.buttonLocal:
 					Intent intentLocalMenu=new Intent(LoginActivity.this,LocalActivity.class);
@@ -71,12 +87,37 @@ public class LoginActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		//
+		boolean bLogined=AppData.getUserData().getUserId()!=null;
+		//
+		editTextUserId=(EditText)findViewById(R.id.editTextUserId);
+		editTextPassword=(EditText)findViewById(R.id.editTextPassword);
+		spinnerCompany=(Spinner)findViewById(R.id.spinnerCompany);
+		buttonOnline=(Button)findViewById(R.id.buttonOnline);
 		buttonQrLogin=(Button)findViewById(R.id.buttonQrLogin);
 		buttonLogin=(Button)findViewById(R.id.buttonLogin);
+		buttonLogout=(Button)findViewById(R.id.buttonLogout);
 		buttonLocal=(Button)findViewById(R.id.buttonLocal);
 		buttonQrLogin.setOnClickListener(this.onClickListener);
 		buttonLogin.setOnClickListener(this.onClickListener);
+		buttonLogout.setOnClickListener(this.onClickListener);
 		buttonLocal.setOnClickListener(this.onClickListener);
+		buttonOnline.setOnClickListener(this.onClickListener);
+		//
+		editTextUserId.setEnabled(!bLogined);
+		editTextPassword.setEnabled(!bLogined);
+		spinnerCompany.setEnabled(!bLogined);
+		buttonQrLogin.setEnabled(!bLogined);
+		buttonLogin.setEnabled(!bLogined);
+		buttonLogout.setEnabled(bLogined);
+		buttonOnline.setEnabled(bLogined);
+		//
+		if(bLogined){
+			editTextUserId.setText(AppData.getUserData().getUserId());
+			editTextPassword.setText(AppData.getUserData().getPassword());
+		}else{
+			editTextUserId.setText("");
+			editTextPassword.setText("");
+		}
 		//显示当前版本号
 		try{
 			PackageManager packageManager=this.getPackageManager();

@@ -15,10 +15,10 @@ import org.json.JSONObject;
 
 import com.chingluh.android.app.AppData;
 
+import static com.chingluh.android.config.AppConfig.HttpUtilConnectString;
+
 public class HttpUtil{
 	private static Map<String,URL> HM_URL;
-	private static String STR_BASE_URL_172="http://10.2.2.2:80/chingluh-web-server/";
-	private static String STR_BASE_URL_192="http://192.168.0.253:8080/chingluh-web-server/";
 
 	/**
 	 * 取连接
@@ -27,16 +27,13 @@ public class HttpUtil{
 	 * @return
 	 * @throws Exception
 	 */
-	private static HttpURLConnection getConnection(String componentName) throws Exception{
+	private static HttpURLConnection getConnection(String componentName)
+			throws Exception{
 		if(HttpUtil.HM_URL==null){
 			HttpUtil.HM_URL=new HashMap<String,URL>();
 		}
 		if(!HttpUtil.HM_URL.containsKey(componentName)){
-			if(!AppData.getIpAddressV4().startsWith("192.168.0.")){
-				HttpUtil.HM_URL.put(componentName,new URL(HttpUtil.STR_BASE_URL_172+componentName));
-			}else{
-				HttpUtil.HM_URL.put(componentName,new URL(HttpUtil.STR_BASE_URL_192+componentName));
-			}
+			HttpUtil.HM_URL.put(componentName,new URL(HttpUtilConnectString+componentName));
 		}
 		URL url=HttpUtil.HM_URL.get(componentName);
 		HttpURLConnection connection=(HttpURLConnection)url.openConnection();
@@ -60,7 +57,8 @@ public class HttpUtil{
 	 * @throws Exception
 	 * @throws UnsupportedEncodingException
 	 */
-	public static JSONObject getMsg(String componentName,HashMap<String,Object> hmParam) throws Exception{
+	public static JSONObject getMsg(String componentName,HashMap<String,Object> hmParam)
+			throws Exception{
 		JSONObject joRtn=new JSONObject();
 		//组参数数组
 		StringBuilder sbParameter=new StringBuilder("paramVersion=0");
