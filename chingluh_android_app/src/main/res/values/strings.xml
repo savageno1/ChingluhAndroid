@@ -61,7 +61,7 @@
 	<string name="ProgressDialog_Ftp_Download_Title">正在下载</string>
 	<string name="ProgressDialog_Ftp_Download_Text">已下载</string>
 	<string name="TextView_Version_Text">版本号：</string>
-	<string name="scan_tips">将二维码图片对准扫描框即可自动扫描</string>
+	<string name="scan_tips">将二维码图片对准扫描框即可扫描绑定</string>
 	<string name="Image_ContentDescription_Logo">Logo</string>
 	<string-array name="Spinner_Items_Frequencies">
 		<item>902.75 MHz</item>
