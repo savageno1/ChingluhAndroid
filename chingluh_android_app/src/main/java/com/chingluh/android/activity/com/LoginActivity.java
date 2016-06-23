@@ -48,6 +48,10 @@ public class LoginActivity extends Activity{
 					new Thread(new LoginThread(LoginActivity.this)).start();
 					break;
 				case R.id.buttonQrLogin:
+					if(editTextPassword.getText().toString().trim().equals("")){
+						MessageUtil.showMessage(LoginActivity.this,getString(R.string.MessageUtil_Message_Please_Input_Password),Toast.LENGTH_LONG);
+						break;
+					}
 					Intent intent=new Intent(LoginActivity.this,CaptureActivity.class);
 					startActivityForResult(intent,0);
 					break;

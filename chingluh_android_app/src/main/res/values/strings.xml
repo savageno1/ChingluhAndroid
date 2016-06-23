@@ -32,6 +32,7 @@
 	<string name="MessageUtil_Message_Ufh_Opened">Ufh 成功打开</string>
 	<string name="MessageUtil_Message_Ufh_Closed">Ufh 成功关闭</string>
 	<string name="MessageUtil_Message_Ufh_Close_Fail">Ufh 关闭失败</string>
+	<string name="MessageUtil_Message_Please_Input_Password">请输入密码</string>
 	<string name="Button_QrLogin_Text">扫码</string>
 	<string name="Button_Scanlabel_Open_Text">打开</string>
 	<string name="Button_Scanlabel_Set_Text">设置</string>
