@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/chingluh_android_app" />
           </set>
         </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
