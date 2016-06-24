@@ -8,7 +8,7 @@ import com.chingluh.android.app.AppData;
 import com.chingluh.android.R;
 import com.chingluh.android.base.BaseThread;
 import com.chingluh.android.config.AppConfig;
-import com.chingluh.android.handler.LoginHandler;
+import com.chingluh.android.handler.BindinHandler;
 import com.chingluh.android.model.PubCompany;
 import com.chingluh.android.util.HttpUtil;
 import com.chingluh.android.util.NetworkUtil;
@@ -19,14 +19,14 @@ import android.os.Message;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-public class LoginThread extends BaseThread{
+public class BindinThread extends BaseThread{
 	//
 	private EditText editTextUserId;//用户名
 	private EditText editTextPassword;//密码
 	private Spinner spinnerCompany;//公司别
 
-	public LoginThread(Activity activity){
-		super(activity,new LoginHandler(activity));
+	public BindinThread(Activity activity){
+		super(activity,new BindinHandler(activity));
 		//
 		this.editTextUserId=(EditText)activity.findViewById(R.id.editTextUserId);
 		this.editTextPassword=(EditText)activity.findViewById(R.id.editTextPassword);

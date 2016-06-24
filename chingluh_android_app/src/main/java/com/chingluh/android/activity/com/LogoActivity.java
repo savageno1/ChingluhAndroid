@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.chingluh.android.R;
-import com.chingluh.android.thread.UpdateCheckThread;
 
 /**
  * @author Ray
@@ -36,7 +35,7 @@ public class LogoActivity extends Activity{
 						e.printStackTrace();
 					}
 					//跳转登录页面
-					Intent intentLogin=new Intent(LogoActivity.this,LoginActivity.class);
+					Intent intentLogin=new Intent(LogoActivity.this,BindinActivity.class);
 					startActivity(intentLogin);
 					finish();
 				}

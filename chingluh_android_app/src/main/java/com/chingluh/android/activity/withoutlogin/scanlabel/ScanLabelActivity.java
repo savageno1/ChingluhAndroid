@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.chingluh.android.R;
 import com.chingluh.android.adapter.UfhAdapter;
-import com.chingluh.android.base.BaseActivityWithoutLogin;
+import com.chingluh.android.base.BaseActivityWithoutBindin;
 import com.chingluh.android.thread.scanlabel.ScanLabelCloseThread;
 import com.chingluh.android.thread.scanlabel.ScanLabelOpenThread;
 import com.chingluh.android.thread.scanlabel.ScanLabelScanThread;
@@ -18,7 +18,7 @@ import com.chingluh.android.thread.scanlabel.ScanLabelScanThread;
 /**
  * Created by Ray on 2016/05/06.
  */
-public class ScanLabelActivity extends BaseActivityWithoutLogin{
+public class ScanLabelActivity extends BaseActivityWithoutBindin{
 	private boolean bScaning=false;
 	private Thread scanLabelScanThread;
 	public View.OnClickListener onClickListener=new View.OnClickListener(){

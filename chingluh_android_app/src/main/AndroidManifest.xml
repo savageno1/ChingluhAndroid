@@ -30,7 +30,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name="com.zbar.lib.CaptureActivity" />
-		<activity android:name=".activity.com.LoginActivity" />
+		<activity android:name=".activity.com.BindinActivity" />
 		<activity android:name=".activity.com.LocalActivity" />
 		<activity android:name=".activity.withlogin.MainActivity" />
 		<activity android:name=".activity.withoutlogin.scanlabel.ScanLabelActivity" />

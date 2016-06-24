@@ -60,6 +60,23 @@
 			android:inputType="textPassword" />
 
 		<TextView
+			android:id="@+id/textViewBindMac"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:gravity="left"
+			android:text="@string/TextView_BindMac_Text"
+			android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<EditText
+			android:id="@+id/editTextBindMac"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="3dip"
+			android:ems="10"
+			android:inputType="textPassword" />
+
+		<TextView
 			android:id="@+id/textViewCompany"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
@@ -79,23 +96,23 @@
 			android:layout_height="match_parent">
 
 			<Button
-				android:id="@+id/buttonLogin"
+				android:id="@+id/buttonBindin"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="3dip"
 				android:layout_weight="1"
 				android:background="@drawable/button_background"
-				android:text="@string/Button_Login_Text"
+				android:text="@string/Button_Bindin_Text"
 				android:textAppearance="?android:attr/textAppearanceLarge" />
 
 			<Button
-				android:id="@+id/buttonQrLogin"
+				android:id="@+id/buttonQrBindin"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="3dip"
 				android:layout_weight="1"
 				android:background="@drawable/button_background"
-				android:text="@string/Button_QrLogin_Text"
+				android:text="@string/Button_QrBindin_Text"
 				android:textAppearance="?android:attr/textAppearanceLarge" />
 
 			<Button

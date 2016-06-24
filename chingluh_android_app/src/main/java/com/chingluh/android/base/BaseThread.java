@@ -3,8 +3,6 @@ package com.chingluh.android.base;
 import android.app.Activity;
 import android.os.Handler;
 
-import com.chingluh.android.handler.LoginHandler;
-
 /**
  * Created by Ray on 2016/05/09.
  */

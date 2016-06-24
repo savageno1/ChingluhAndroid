@@ -8,15 +8,14 @@ import android.os.Message;
 import android.widget.Toast;
 
 import com.chingluh.android.R;
-import com.chingluh.android.activity.com.LoginActivity;
-import com.chingluh.android.activity.withlogin.MainActivity;
+import com.chingluh.android.activity.com.BindinActivity;
 import com.chingluh.android.app.AppData;
 import com.chingluh.android.util.MessageUtil;
 
-public class LoginHandler extends Handler{
+public class BindinHandler extends Handler{
 	private Activity activity;
 
-	public LoginHandler(Activity activity){
+	public BindinHandler(Activity activity){
 		super(activity.getMainLooper());
 		this.activity=activity;
 	}
@@ -29,10 +28,10 @@ public class LoginHandler extends Handler{
 			return;
 		}
 		//提示信息
-		String strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Login_Welcome)+"  "+AppData.getUserData().getRealName()+"!";
+		String strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Bindin_Welcome)+"  "+AppData.getUserData().getRealName()+"!";
 		MessageUtil.showMessage(this.activity,strWelcomeMsg,Toast.LENGTH_SHORT);
 		//跳转
-		Intent intent=new Intent(this.activity,LoginActivity.class);
+		Intent intent=new Intent(this.activity,BindinActivity.class);
 		this.activity.startActivity(intent);
 		this.activity.finish();
 	}
