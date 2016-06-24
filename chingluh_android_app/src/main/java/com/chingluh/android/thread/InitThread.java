@@ -45,7 +45,8 @@ public class InitThread implements Runnable{
 			//取默认列表值
 			JSONObject joMsg=null;
 			try{
-				joMsg=HttpUtil.getMsg("console/login/"+"android/init?",hmParam).getJSONObject("joMsg");
+				//joMsg=HttpUtil.getMsg("console/login/"+"android/init?",hmParam).getJSONObject("joMsg");
+				joMsg=new JSONObject(STR_DEFAULT_JOMSG);
 			}catch(Exception e){
 				joMsg=new JSONObject(STR_DEFAULT_JOMSG);
 			}
@@ -62,7 +63,8 @@ public class InitThread implements Runnable{
 			bundle.putSerializable("mapCompany",mapForSerializable);
 			//检核绑定状态变更
 			try{
-				joMsg=HttpUtil.getMsg("console/login/"+"android/checkBin?",hmParam).getJSONObject("joMsg");
+//				joMsg=HttpUtil.getMsg("console/login/"+"android/checkBin?",hmParam).getJSONObject("joMsg");
+				joMsg=new JSONObject().put("rtnMsg",this.activity.getString(R.string.MessageUtil_Message_CheckInFail));
 			}catch(Exception e){
 				joMsg=new JSONObject().put("rtnMsg",this.activity.getString(R.string.MessageUtil_Message_CheckInFail));
 			}
