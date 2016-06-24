@@ -14,16 +14,9 @@ public class BaseActivityWithBindin extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		//登录检查
-		if(!checkHaveBindin()){
-			return;
-		}
-	}
-
-	private boolean checkHaveBindin(){
-		boolean bBindined=AppData.getUserData().getUserId()!=null;
-		//检查是否登录
-		if(!bBindined){
+		//绑定检查
+		//检查是否绑定
+		if(!AppData.checkBind(this)){
 			MessageUtil.showMessage(this,getString(R.string.Toast_NeedBindin_Text),Toast.LENGTH_SHORT);
 			//设置跳转登录页面意图
 			Intent intentBindin=new Intent(BaseActivityWithBindin.this,BindinActivity.class);
@@ -32,6 +25,5 @@ public class BaseActivityWithBindin extends Activity{
 			//关闭当前页面
 			finish();
 		}
-		return false;
 	}
 }

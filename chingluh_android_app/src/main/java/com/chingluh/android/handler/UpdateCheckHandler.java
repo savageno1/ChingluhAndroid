@@ -71,7 +71,7 @@ public class UpdateCheckHandler extends Handler{
 	public void handleMessage(Message message){
 		Bundle bundle=message.getData();
 		if(MessageUtil.showMessageError(this.activity,Toast.LENGTH_LONG,bundle)){
-			AppData.setNullUserData();
+			AppData.unbind(activity);
 			return;
 		}
 		int iNewVersion=bundle.getInt("NEW_VERSION");

@@ -34,11 +34,12 @@ import com.zbar.lib.CaptureActivity;
 public class BindinActivity extends Activity{
 	private EditText editTextUserId;//用户名
 	private EditText editTextPassword;//密码
-	private Button buttonBindin;//登陆按钮
-	private Button buttonQrBindin;//扫码登陆按钮
+	private EditText editTextBindMac;//绑定校验码
+	private Button buttonBindin;//绑定按钮
+	private Button buttonQrBindin;//扫码绑定按钮
 	private Button buttonLogout;//登出按钮
-	private Button buttonLocal;//免登陆
-	private Button buttonOnline;//需登陆
+	private Button buttonLocal;//免绑定
+	private Button buttonOnline;//需绑定
 	private Spinner spinnerCompany;//公司别
 	private OnClickListener onClickListener=new OnClickListener(){
 		@Override
@@ -60,7 +61,7 @@ public class BindinActivity extends Activity{
 					startActivityForResult(intent,0);
 					break;
 				case R.id.buttonLogout:
-					AppData.setNullUserData();
+					AppData.unbind(BindinActivity.this);
 					onCreate(null);
 					break;
 				case R.id.buttonOnline:
@@ -94,11 +95,12 @@ public class BindinActivity extends Activity{
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-		//
-		boolean bBindined=AppData.getUserData().getUserId()!=null;
+		//新线程加载初始化
+		new Thread(new InitThread(BindinActivity.this)).start();
 		//
 		editTextUserId=(EditText)findViewById(R.id.editTextUserId);
 		editTextPassword=(EditText)findViewById(R.id.editTextPassword);
+		editTextBindMac=(EditText)findViewById(R.id.editTextBindMac);
 		spinnerCompany=(Spinner)findViewById(R.id.spinnerCompany);
 		buttonOnline=(Button)findViewById(R.id.buttonOnline);
 		buttonQrBindin=(Button)findViewById(R.id.buttonQrBindin);
@@ -110,22 +112,6 @@ public class BindinActivity extends Activity{
 		buttonLogout.setOnClickListener(this.onClickListener);
 		buttonLocal.setOnClickListener(this.onClickListener);
 		buttonOnline.setOnClickListener(this.onClickListener);
-		//
-		editTextUserId.setEnabled(!bBindined);
-		editTextPassword.setEnabled(!bBindined);
-		spinnerCompany.setEnabled(!bBindined);
-		buttonQrBindin.setEnabled(!bBindined);
-		buttonBindin.setEnabled(!bBindined);
-		buttonLogout.setEnabled(bBindined);
-		buttonOnline.setEnabled(bBindined);
-		//
-		if(bBindined){
-			editTextUserId.setText(AppData.getUserData().getUserId());
-			editTextPassword.setText(AppData.getUserData().getPassword());
-		}else{
-			editTextUserId.setText("");
-			editTextPassword.setText("");
-		}
 		//显示当前版本号
 		try{
 			PackageManager packageManager=this.getPackageManager();
@@ -134,8 +120,6 @@ public class BindinActivity extends Activity{
 		}catch(Exception e){
 			MessageUtil.showMessage(this,e.getMessage(),Toast.LENGTH_LONG);
 		}
-		//新线程加载初始化
-		new Thread(new InitThread(BindinActivity.this)).start();
 		//检查更新
 		new Thread(new UpdateCheckThread(BindinActivity.this)).start();
 	}

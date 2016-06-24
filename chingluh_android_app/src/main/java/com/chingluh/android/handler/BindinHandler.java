@@ -24,11 +24,11 @@ public class BindinHandler extends Handler{
 	public void handleMessage(Message message){
 		Bundle bundle=message.getData();
 		if(MessageUtil.showMessageError(this.activity,Toast.LENGTH_LONG,bundle)){
-			AppData.setNullUserData();
+			AppData.unbind(activity);
 			return;
 		}
 		//提示信息
-		String strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Bindin_Welcome)+"  "+AppData.getUserData().getRealName()+"!";
+		String strWelcomeMsg=this.activity.getString(R.string.MessageUtil_Message_Bindin_Welcome)+"  "+AppData.getUserData(activity).getRealName()+"!";
 		MessageUtil.showMessage(this.activity,strWelcomeMsg,Toast.LENGTH_SHORT);
 		//跳转
 		Intent intent=new Intent(this.activity,BindinActivity.class);

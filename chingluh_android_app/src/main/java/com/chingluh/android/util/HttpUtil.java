@@ -1,5 +1,7 @@
 package com.chingluh.android.util;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -11,42 +13,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.json.JSONObject;
-
-import com.chingluh.android.app.AppData;
-
 import static com.chingluh.android.config.AppConfig.HttpUtilConnectString;
 
 public class HttpUtil{
 	private static Map<String,URL> HM_URL;
-
-	/**
-	 * 取连接
-	 *
-	 * @param componentName
-	 * @return
-	 * @throws Exception
-	 */
-	private static HttpURLConnection getConnection(String componentName)
-			throws Exception{
-		if(HttpUtil.HM_URL==null){
-			HttpUtil.HM_URL=new HashMap<String,URL>();
-		}
-		if(!HttpUtil.HM_URL.containsKey(componentName)){
-			HttpUtil.HM_URL.put(componentName,new URL(HttpUtilConnectString+componentName));
-		}
-		URL url=HttpUtil.HM_URL.get(componentName);
-		HttpURLConnection connection=(HttpURLConnection)url.openConnection();
-		connection.setDoInput(true);
-		connection.setDoOutput(true);
-		connection.setRequestMethod("POST");
-		connection.setUseCaches(false);
-		connection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
-		//		connection.setRequestProperty("Content-Type", "application/json");
-		connection.setRequestProperty("Charset","utf-8");
-		connection.connect();
-		return connection;
-	}
 
 	/**
 	 * 取数据
@@ -87,5 +57,33 @@ public class HttpUtil{
 		//返回资料
 		joRtn.put("joMsg",new JSONObject(sbRtn.toString()));
 		return joRtn;
+	}
+
+	/**
+	 * 取连接
+	 *
+	 * @param componentName
+	 * @return
+	 * @throws Exception
+	 */
+	private static HttpURLConnection getConnection(String componentName)
+			throws Exception{
+		if(HttpUtil.HM_URL==null){
+			HttpUtil.HM_URL=new HashMap<String,URL>();
+		}
+		if(!HttpUtil.HM_URL.containsKey(componentName)){
+			HttpUtil.HM_URL.put(componentName,new URL(HttpUtilConnectString+componentName));
+		}
+		URL url=HttpUtil.HM_URL.get(componentName);
+		HttpURLConnection connection=(HttpURLConnection)url.openConnection();
+		connection.setDoInput(true);
+		connection.setDoOutput(true);
+		connection.setRequestMethod("POST");
+		connection.setUseCaches(false);
+		connection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+		//		connection.setRequestProperty("Content-Type", "application/json");
+		connection.setRequestProperty("Charset","utf-8");
+		connection.connect();
+		return connection;
 	}
 }
