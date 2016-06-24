@@ -23,7 +23,7 @@ import com.chingluh.android.R;
 import com.chingluh.android.activity.withlogin.MainActivity;
 import com.chingluh.android.app.AppData;
 import com.chingluh.android.thread.InitThread;
-import com.chingluh.android.thread.LoginThread;
+import com.chingluh.android.thread.BindinThread;
 import com.chingluh.android.thread.UpdateCheckThread;
 import com.chingluh.android.util.MessageUtil;
 import com.zbar.lib.CaptureActivity;
@@ -31,11 +31,11 @@ import com.zbar.lib.CaptureActivity;
 /**
  * @author Ray
  */
-public class LoginActivity extends Activity{
+public class BindinActivity extends Activity{
 	private EditText editTextUserId;//用户名
 	private EditText editTextPassword;//密码
-	private Button buttonLogin;//登陆按钮
-	private Button buttonQrLogin;//扫码登陆按钮
+	private Button buttonBindin;//登陆按钮
+	private Button buttonQrBindin;//扫码登陆按钮
 	private Button buttonLogout;//登出按钮
 	private Button buttonLocal;//免登陆
 	private Button buttonOnline;//需登陆
@@ -44,15 +44,19 @@ public class LoginActivity extends Activity{
 		@Override
 		public void onClick(View v){
 			switch(v.getId()){
-				case R.id.buttonLogin:
-					new Thread(new LoginThread(LoginActivity.this)).start();
+				case R.id.buttonBindin:
+					new Thread(new BindinThread(BindinActivity.this)).start();
 					break;
-				case R.id.buttonQrLogin:
-					if(editTextPassword.getText().toString().trim().equals("")){
-						MessageUtil.showMessage(LoginActivity.this,getString(R.string.MessageUtil_Message_Please_Input_Password),Toast.LENGTH_LONG);
+				case R.id.buttonQrBindin:
+					if(editTextUserId.getText().toString().trim().equals("")){
+						MessageUtil.showMessage(BindinActivity.this,getString(R.string.MessageUtil_Message_Please_Input_Userid),Toast.LENGTH_LONG);
 						break;
 					}
-					Intent intent=new Intent(LoginActivity.this,CaptureActivity.class);
+					if(editTextPassword.getText().toString().trim().equals("")){
+						MessageUtil.showMessage(BindinActivity.this,getString(R.string.MessageUtil_Message_Please_Input_Password),Toast.LENGTH_LONG);
+						break;
+					}
+					Intent intent=new Intent(BindinActivity.this,CaptureActivity.class);
 					startActivityForResult(intent,0);
 					break;
 				case R.id.buttonLogout:
@@ -60,11 +64,11 @@ public class LoginActivity extends Activity{
 					onCreate(null);
 					break;
 				case R.id.buttonOnline:
-					Intent intentOnlineMenu=new Intent(LoginActivity.this,MainActivity.class);
+					Intent intentOnlineMenu=new Intent(BindinActivity.this,MainActivity.class);
 					startActivity(intentOnlineMenu);
 					break;
 				case R.id.buttonLocal:
-					Intent intentLocalMenu=new Intent(LoginActivity.this,LocalActivity.class);
+					Intent intentLocalMenu=new Intent(BindinActivity.this,LocalActivity.class);
 					startActivity(intentLocalMenu);
 					break;
 			}
@@ -91,31 +95,31 @@ public class LoginActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		//
-		boolean bLogined=AppData.getUserData().getUserId()!=null;
+		boolean bBindined=AppData.getUserData().getUserId()!=null;
 		//
 		editTextUserId=(EditText)findViewById(R.id.editTextUserId);
 		editTextPassword=(EditText)findViewById(R.id.editTextPassword);
 		spinnerCompany=(Spinner)findViewById(R.id.spinnerCompany);
 		buttonOnline=(Button)findViewById(R.id.buttonOnline);
-		buttonQrLogin=(Button)findViewById(R.id.buttonQrLogin);
-		buttonLogin=(Button)findViewById(R.id.buttonLogin);
+		buttonQrBindin=(Button)findViewById(R.id.buttonQrBindin);
+		buttonBindin=(Button)findViewById(R.id.buttonBindin);
 		buttonLogout=(Button)findViewById(R.id.buttonLogout);
 		buttonLocal=(Button)findViewById(R.id.buttonLocal);
-		buttonQrLogin.setOnClickListener(this.onClickListener);
-		buttonLogin.setOnClickListener(this.onClickListener);
+		buttonQrBindin.setOnClickListener(this.onClickListener);
+		buttonBindin.setOnClickListener(this.onClickListener);
 		buttonLogout.setOnClickListener(this.onClickListener);
 		buttonLocal.setOnClickListener(this.onClickListener);
 		buttonOnline.setOnClickListener(this.onClickListener);
 		//
-		editTextUserId.setEnabled(!bLogined);
-		editTextPassword.setEnabled(!bLogined);
-		spinnerCompany.setEnabled(!bLogined);
-		buttonQrLogin.setEnabled(!bLogined);
-		buttonLogin.setEnabled(!bLogined);
-		buttonLogout.setEnabled(bLogined);
-		buttonOnline.setEnabled(bLogined);
+		editTextUserId.setEnabled(!bBindined);
+		editTextPassword.setEnabled(!bBindined);
+		spinnerCompany.setEnabled(!bBindined);
+		buttonQrBindin.setEnabled(!bBindined);
+		buttonBindin.setEnabled(!bBindined);
+		buttonLogout.setEnabled(bBindined);
+		buttonOnline.setEnabled(bBindined);
 		//
-		if(bLogined){
+		if(bBindined){
 			editTextUserId.setText(AppData.getUserData().getUserId());
 			editTextPassword.setText(AppData.getUserData().getPassword());
 		}else{
@@ -131,9 +135,9 @@ public class LoginActivity extends Activity{
 			MessageUtil.showMessage(this,e.getMessage(),Toast.LENGTH_LONG);
 		}
 		//新线程加载初始化
-		new Thread(new InitThread(LoginActivity.this)).start();
+		new Thread(new InitThread(BindinActivity.this)).start();
 		//检查更新
-		new Thread(new UpdateCheckThread(LoginActivity.this)).start();
+		new Thread(new UpdateCheckThread(BindinActivity.this)).start();
 	}
 
 	@Override

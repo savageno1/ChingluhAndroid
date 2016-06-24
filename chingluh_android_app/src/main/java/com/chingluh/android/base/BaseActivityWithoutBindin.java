@@ -9,14 +9,14 @@ import android.view.KeyEvent;
 
 import com.chingluh.android.R;
 
-public class BaseActivityWithoutLogin extends Activity{
+public class BaseActivityWithoutBindin extends Activity{
 	//按钮监听器
 	private DialogInterface.OnClickListener onClickListenerExit=new DialogInterface.OnClickListener(){
 		@Override
 		public void onClick(DialogInterface dialog,int which){
 			switch(which){
 				case DialogInterface.BUTTON_POSITIVE://确认按钮
-//					Intent intentLogin=new Intent(BaseActivityWithoutLogin.this,LoginActivity.class);
+//					Intent intentLogin=new Intent(BaseActivityWithoutBindin.this,BindinActivity.class);
 //					startActivity(intentLogin);
 					finish();
 					break;
